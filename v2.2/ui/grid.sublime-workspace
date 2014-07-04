@@ -1,0 +1,497 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"re",
+				"req"
+			],
+			[
+				"mp",
+				"mapList"
+			],
+			[
+				"ass",
+				"assetSelected"
+			],
+			[
+				"asset",
+				"assetData"
+			],
+			[
+				"asse",
+				"assetSelected"
+			],
+			[
+				"empl",
+				"employee"
+			],
+			[
+				"emp",
+				"empData"
+			],
+			[
+				"data",
+				"dataItem"
+			],
+			[
+				"client",
+				"client"
+			],
+			[
+				"csv",
+				"csvFile"
+			],
+			[
+				"alerts",
+				"alerts"
+			],
+			[
+				"aler",
+				"alert"
+			],
+			[
+				"alert",
+				"alertService"
+			],
+			[
+				"add",
+				"addAlert"
+			],
+			[
+				"as",
+				"assetList"
+			],
+			[
+				"s",
+				"scope"
+			],
+			[
+				"t",
+				"type"
+			],
+			[
+				"op",
+				"opr2"
+			],
+			[
+				"rev",
+				"rev_num"
+			],
+			[
+				"str",
+				"strlen"
+			],
+			[
+				"in",
+				"input"
+			],
+			[
+				"rel",
+				"reladdr"
+			],
+			[
+				"fp",
+				"fp"
+			],
+			[
+				"te",
+				"textRecord"
+			],
+			[
+				"pr",
+				"printf	printf …"
+			],
+			[
+				"fol",
+				"followsearch"
+			],
+			[
+				"follow",
+				"follow"
+			],
+			[
+				"p",
+				"printf	printf …"
+			],
+			[
+				"folo",
+				"follow"
+			],
+			[
+				"pri",
+				"printf	printf …"
+			],
+			[
+				"non",
+				"non_term"
+			],
+			[
+				"find",
+				"findfollow"
+			],
+			[
+				"e",
+				"e_flag"
+			],
+			[
+				"fo",
+				"fo_lim"
+			],
+			[
+				"foll",
+				"follow"
+			],
+			[
+				"ar",
+				"argtemp"
+			],
+			[
+				"nam",
+				"namtab_index"
+			],
+			[
+				"de",
+				"deftab_index"
+			],
+			[
+				"def",
+				"deftab"
+			],
+			[
+				"temp",
+				"temp_opr"
+			],
+			[
+				"tem",
+				"temp_opr"
+			],
+			[
+				"i",
+				"i"
+			],
+			[
+				"arg",
+				"arg_end"
+			],
+			[
+				"fir",
+				"firstsearch"
+			],
+			[
+				"f",
+				"f_index"
+			],
+			[
+				"first",
+				"firstsearch"
+			],
+			[
+				"term",
+				"termsearch"
+			],
+			[
+				"ter",
+				"terminals"
+			],
+			[
+				"no",
+				"non_term"
+			],
+			[
+				"d",
+				"d_lim"
+			],
+			[
+				"strc",
+				"strcmp"
+			],
+			[
+				"a",
+				"a_lim"
+			],
+			[
+				"c",
+				"count"
+			],
+			[
+				"na",
+				"namtab"
+			],
+			[
+				"exapn",
+				"expanding"
+			],
+			[
+				"n",
+				"n_lim"
+			],
+			[
+				"argt",
+				"argtab"
+			],
+			[
+				"ma",
+				"macroname"
+			],
+			[
+				"w",
+				"writeToExpandedFile"
+			],
+			[
+				"fin",
+				"fin"
+			],
+			[
+				"sy",
+				"symbol_value"
+			],
+			[
+				"symbol",
+				"symbol_value"
+			],
+			[
+				"ad",
+				"addToArr"
+			],
+			[
+				"symbo",
+				"symbol_value"
+			],
+			[
+				"loc",
+				"locctr"
+			],
+			[
+				"addr",
+				"addr_text"
+			],
+			[
+				"lin",
+				"link"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/opt/lampp/htdocs/company/ownership.html",
+		"/opt/lampp/htdocs/company/js/app/app.js",
+		"/home/pranav/proj/sails/api/api/controllers/AssetController.js",
+		"/home/pranav/proj/sails/api/api/controllers/UploadController.js",
+		"/home/pranav/proj/sails/api/api/models/Building.js",
+		"/home/pranav/proj/sails/api/api/models/Floor.js",
+		"/home/pranav/proj/sails/api/api/models/Asset.js",
+		"/home/pranav/proj/sails/api/api/models/Location.js",
+		"/home/pranav/proj/sails/api/api/controllers/AssetmapController.js",
+		"/opt/lampp/htdocs/company/map-asset.html",
+		"/home/pranav/proj/sails/api/api/controllers/EmployeeController.js",
+		"/home/pranav/proj/sails/api/api/models/Assetmap.js",
+		"/home/pranav/cc.csv",
+		"/home/pranav/aa.csv",
+		"/home/pranav/randgenerator.py",
+		"/home/pranav/proj/sails/api/api/models/Employee.js",
+		"/home/pranav/proj/sails/api/api/models/Zone.js",
+		"/opt/lampp/htdocs/company/asset-details.html",
+		"/home/pranav/proj/sails/api/api/models/Receiver.js",
+		"/home/pranav/proj/sails/api/config/connections.js",
+		"/home/pranav/proj/sails/api/api/controllers/LocationController.js",
+		"/home/pranav/proj/sails/api/api/controllers/ReceiverController.js",
+		"/opt/lampp/htdocs/company/index.html",
+		"/home/pranav/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/pranav/proj/sails/AssetTracking/Dashboard-NewUI/views/page/barchart.ejs",
+		"/home/pranav/proj/sails/AssetTracking/Dashboard-NewUI/views/page/dashboard.ejs",
+		"/home/pranav/proj/sails/AssetTracking/Dashboard-NewUI/assets/views/chart.html",
+		"/home/pranav/proj/sails/AssetTracking/Dashboard-NewUI/assets/views/barchart.html",
+		"/home/pranav/proj/sails/AssetTracking/Dashboard-NewUI/views/page/transit-maps.ejs",
+		"/home/pranav/proj/sails/AssetTracking/Dashboard-NewUI/views/page/floor.ejs",
+		"/home/pranav/proj/sails/AssetTracking/server/ServerNew.js",
+		"/home/pranav/proj/sails/AssetTracking/server/mongoserver.js",
+		"/opt/lampp/htdocs/company/css/ui-bootstrap-tpls-0.11.0.min.js",
+		"/opt/lampp/htdocs/company/import-csv.html",
+		"/opt/lampp/htdocs/company/add-asset.html",
+		"/home/pranav/proj/sails/api/config/cors.js",
+		"/home/pranav/spoj/revnum.c",
+		"/home/pranav/spoj/claudi.c",
+		"/home/pranav/spoj/palin.c",
+		"/home/pranav/spoj/1-life.c",
+		"/home/pranav/spoj/prime_2.c",
+		"/home/pranav/C/first/first.c",
+		"/home/pranav/C/absolute/input.txt",
+		"/home/pranav/C/absolute/abs.c",
+		"/home/pranav/C/macro/macro.c",
+		"/home/pranav/C/macro/output.txt",
+		"/home/pranav/C/macro/input.txt",
+		"/home/pranav/C/macro/macro",
+		"/home/pranav/C/onepass/onepass.c",
+		"/home/pranav/C/twopass/onepass.c",
+		"/home/pranav/C/onepass/optab.txt",
+		"/home/pranav/C/onepass/output.txt",
+		"/home/pranav/C/onepass/input.txt",
+		"/home/pranav/C/onepass/#include<stdio.h>",
+		"/home/pranav/New_linux/www/company/index.html"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"http://localhost:1337/asset/",
+			"templateUrl",
+			"alerts",
+			"alertService",
+			"class=\"form-control\" ",
+			"startaddr",
+			"^",
+			"\n	",
+			"prod[i].list",
+			"root",
+			"fi_lim",
+			"f_index",
+			"production",
+			"deftab",
+			",\"$\"))\n",
+			"deftab[d_lim]",
+			"addTo",
+			"1",
+			"symbolinsert"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "grid.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
