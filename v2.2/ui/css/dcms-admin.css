@@ -24,6 +24,7 @@ body {
 
 #page-wrapper {
     padding: 0 15px;
+    min-height: 900px;
     background-color: #fff;
 }
 
