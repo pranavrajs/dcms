@@ -1,8 +1,9 @@
 D-Content Management System 
 
 An online tool to manage the participants and event co-ordinators . 
-This was developed at College of Engineering Trivandrum for their techincal fest Dristhi . The system consists of admin levels which generate different admin privilages 
+This was developed at College of Engineering Trivandrum for their techincal fest Dristhi . The system consists of admin levels which generate different admin privilage.
 
-![alt tag](http://cetdhwani.com/github/main.png)
 
-Screenshot of login Page
+I'm discontinuing the support of this project . Those who want to work on this project can sent a pull request 
+
+
