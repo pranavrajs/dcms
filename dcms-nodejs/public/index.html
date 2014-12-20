@@ -32,9 +32,12 @@ THE SOFTWARE.
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DCMS</title>
+  <!-- StyleSheets -->
   <link href="stylesheets/style.css" rel="stylesheet">
+  <!-- End StyleSheets -->
 </head>
 <body>
+	<!-- Navbar -->
 	<div class="navbar navbar-default navbar-static-top" role="navigation" bs-navbar>
 	  <div class="navbar-header">
 	    <a class="navbar-brand" href="/">
@@ -53,15 +56,25 @@ THE SOFTWARE.
 	    <li><a href="javascript:void(0)" ng-click="logout()">Logout</a></li>
 	  </ul>
 	</div>
-
+	<!-- End Navbar -->
+	<!-- View Template -->
 	<div ng-view></div>
+	<!-- End View Template -->
+
+	<!-- Angular Resources -->
 	<script src="javascripts/angular/resources/angular.js"></script>
-	<script src="javascripts/angular/app.js"></script>
 	<script src="javascripts/angular/resources/angular-strap.js"></script>
 	<script src="javascripts/angular/resources/angular-strap.tpl.js"></script>
 	<script src="javascripts/angular/resources/angular-messages.js"></script>
 	<script src="javascripts/angular/resources/angular-resource.js"></script>
 	<script src="javascripts/angular/resources/angular-route.js"></script>
 	<script src="javascripts/angular/resources/angular-cookies.js"></script>
+	<!-- End Angular Resources -->
+
+	<!-- Controller + Angular App Files -->
+	<script src="javascripts/angular/app.js"></script>
+	<script src="javascripts/angular/controllers/main.js"></script>
+	<!-- End Controller + Angular App Files -->
+
 </body>
 </html>

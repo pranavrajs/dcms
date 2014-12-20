@@ -3290,7 +3290,7 @@ tbody.collapse.in {
   .navbar-default .navbar-brand {
     color: #fff; }
     .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-      color: #2980b9;
+      color: #fff;
       background-color: #333; }
   .navbar-default .navbar-text {
     color: #777; }
