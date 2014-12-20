@@ -21,8 +21,8 @@ $navbar-default-link-color: #848484;
 $navbar-default-bg: #fff;
 $navbar-default-border: #e3e9ec;
 
-$navbar-default-brand-color: #333;
-$navbar-default-brand-hover-color: #ffe939;
+$navbar-default-brand-color: #fff;
+$navbar-default-brand-hover-color: #2980b9;
 $navbar-default-brand-hover-bg: #333;
 
 $btn-success-bg: $brand-success;
@@ -201,7 +201,7 @@ em {
 }
 
 .navbar-brand {
-  background-color: #ffe939;
+  background-color: #2980b9;
   transition: 0.25s all;
   margin-left: -15px;
 }
