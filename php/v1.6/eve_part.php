@@ -12,14 +12,14 @@
 					header('Location:eve_part.php?var='.$_SESSION['event'].'');
 				if(!isset($_POST['submit'])) {
 ?>
-	<div class="box span12">
-	<div class="box-content">
+	<div class="row">
+	<div class="col-lg-12">
 	<legend>Participant Details</legend>	
 	<form action="eve_part.php" method="POST">
 	<table class="table table-striped table-bordered bootstrap-datatable ">
 		<tr>
 			<td>Select an event </td>
-			<td>		<select name="eve">
+			<td>		<select name="eve"  class="form-control">
 <?php						
 		$query="SELECT id,name FROM events ORDER BY id ASC";
 					$result=mysql_query($query);

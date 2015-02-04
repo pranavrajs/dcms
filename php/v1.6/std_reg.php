@@ -110,11 +110,11 @@ $('#pay').change(function (){
 <table class="table table-striped table-bordered bootstrap-datatable ">
 	<tr>
 		<td> Name </td>
-		<td>		<input name="name"  type="text" placeholder="Name"  /></td>	
+		<td>		<input name="name"  type="text" placeholder="Name"   class="form-control"/></td>	
 	</tr>
 	<tr>
 		<td> College </td>
-		<td><select name="college"  id="selectError" data-rel="chosen">
+		<td><select name="college"  id="selectError" data-rel="chosen"  class="form-control">
 <?php 
 	$query="SELECT * FROM college ORDER BY CollegeId ASC";
 				$result=mysql_query($query) or die(mysql_error());
@@ -129,21 +129,21 @@ $('#pay').change(function (){
 	</tr>
 	<tr>
 		<td> Email </td>
-		<td>		<input name="email"  type="email" placeholder="Email"    /></td>	
+		<td>		<input name="email"  type="email" placeholder="Email"    class="form-control"  /></td>	
 	</tr>
 	<tr>
 		<td> Phone </td>
-		<td>		<input name="phone"  type="text" placeholder="Phone1"  /></td>	
+		<td>		<input name="phone"  type="text" placeholder="Phone1"   class="form-control" /></td>	
 	</tr>
 	<tr style="display:none;">
 		<td style="visibility:hidden;"> Secondary Phone </td>
-		<td>		<input   name="phone2"  type="text" placeholder="Phone2"   /></td>	
+		<td>		<input   name="phone2"  type="text" placeholder="Phone2"    class="form-control" /></td>	
 	</tr>			
 	<tr>
 		<td> Accomodation </td>
 		
 		<td>
-		<select name="accomodation">
+		<select name="accomodation"  class="form-control">
 						<option value="0"> No accomodation</option>
 						<option value="1"> Male accomodation</option>
 						<option value="2"> Female accomodation</option>
@@ -153,7 +153,7 @@ $('#pay').change(function (){
 	<tr>
 		<td> Payment </td>
 		<td>
-<select name="payment" id="pay" multiple="multiple">
+<select name="payment" id="pay" multiple="multiple"  class="form-control">
 	<option value="0"> No payment</option>
 	<option value="1">Rs.150</option>
 	<option value="2"> Rs.200</option>

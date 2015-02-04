@@ -15,8 +15,8 @@ if(!isset($_POST['submit'])) {
 				
 					
 ?>
-				<div class="box span12">
-	<div class="box-content">
+				<div class="row">
+	<div class="col-lg-12">
 		
 <legend>Enter student details</legend>
 <fieldset>
@@ -24,9 +24,9 @@ if(!isset($_POST['submit'])) {
 	<form action="add-managers.php" method="POST"class="form-horizontal">
 <table class="table table-striped table-bordered bootstrap-datatable ">
 	<tr>
-		<td> Name </td>
+		<td style="width:30%"> Name </td>
 		<td>		
-		<select name="cl_name">
+		<select name="cl_name" class="form-control">
 			<?php 
 while($res=mysql_fetch_array($result)) {
 			echo "<option value=".$res['id'].">".$res['fname']." ".$res['lname']."</option>";
@@ -38,15 +38,22 @@ while($res=mysql_fetch_array($result)) {
 	<tr>
 		<td>Email Alias</td>
 		<td>
-		<div class="input-append">
-			<input id="appendedInput" size="40" type="text" name="email_drs" /><span class="add-on">@cetdrishti.com</span>
-		</div>
+
+<div class="input-group">
+  <input type="text" class="form-control" placeholder="Email Id" name="email_drs">
+  <span class="input-group-addon" id="basic-addon2">@example.com</span>
+</div>
+
+
+
+
+
 		</td>
 	</tr>
 	<tr>
 		<td> Event </td>
 		<td>
-		<select name="event">
+		<select name="event" class="form-control">
 <?php 
 	$q2="SELECT name,id FROM events ";
 	$r2=mysql_query($q2);	

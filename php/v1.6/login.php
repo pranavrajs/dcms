@@ -8,9 +8,9 @@ require "connect.inc.php";
 	 
  include('header.php'); 
 ?>
-<div class="box span6">
+<div class="row">
 
-	<div class="box-content">
+	<div class="col-md-6">
 		
 <legend>DashBoard</legend>
 <?php
@@ -34,9 +34,8 @@ require "connect.inc.php";
 4- Check your mail regularly (Mail sent to yourname@cetdrishti.com will be forwarded to your personal mail also.)</p>
   	</div>
 </div>
-<div class="box span6">
+<div class="col-md-6">
 
-	<div class="box-content">
 	<legend>No of Participants</legend>
 	<p>Total no of participants reported at Drishti&#34;13 : 
 	<?php
@@ -74,11 +73,8 @@ require "connect.inc.php";
 <p>
 
 </p>
-</div>
 </div>				
-<div class="box span6">
-
-	<div class="box-content">
+<div class="col-md-6">
 	<legend>Important Contacts</legend>
 				<p class="conv_h">Event :  Sachin Murali 9037519753</p>
 				<p class="conv_h"> Program : Anoop Sasidharan 8547359193</p>
@@ -91,8 +87,7 @@ require "connect.inc.php";
 				<p class="conv_h"> Hospitality :  Jithin T 9747067719 </p>
 				<p class="conv_h">Site Designer : Nithin David T </p>
 				<p class="conv_h">Site Designer : Pranav Raj S </p>
-				
-</div>
+		
 </div>				
 				<?php				
 				}
@@ -120,10 +115,10 @@ require "connect.inc.php";
 			}
 	?>
 	</p>	
-				</div></div>
-				<div class="box span6">
 
-	<div class="box-content">
+
+
+	<div class="col-md-6">
 	
 	<legend>Important Contacts</legend>
 				<p class="conv_h">Event :  Sachin Murali 9037519753</p>
@@ -137,8 +132,7 @@ require "connect.inc.php";
 				<p class="conv_h"> Hospitality :  Jithin T 9747067719 </p>
 				<p class="conv_h">Site Designer : Nithin David T </p>
 				<p class="conv_h">Site Designer : Pranav Raj S </p>
-				
-</div>
+		
 </div>		
 				<?php				
 				}
@@ -258,10 +252,7 @@ require "connect.inc.php";
 	?>
 	</p>
 	</div>
-	</div>
-<div class="box span6">
-
-	<div class="box-content">
+<div class="col-md-6">
 	<legend>Important Contacts</legend>
 				<p class="conv_h">Event :  Sachin Murali 9037519753</p>
 				<p class="conv_h"> Program : Anoop Sasidharan 8547359193</p>

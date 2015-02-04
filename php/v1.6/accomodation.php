@@ -16,8 +16,8 @@
 			if($num)
 			{
 			?>
-<div class="row-fluid sortable">		
-	<div class="box span12">
+<div class="rowe">		
+	<div class="col-lg-12">
 			<div class="box-header well" data-original-title>
 						<div class="box-icon">
 							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
@@ -65,14 +65,14 @@
 	}	
 	else {	
 ?>
-<div class="box span12">
-	<div class="box-content">
+<div class="row">
+	<div class="col-lg-12">
 	<legend>Accomodation Details</legend>	
 	<form action="accomodation.php" method="POST">
 	<table class="table table-striped table-bordered bootstrap-datatable ">
 		<tr>
 			<td>Select a value </td>
-			<td>		<select name="acc">
+			<td>		<select name="acc"  class="form-control">
 						<option value="0"> No accomodation</option>
 						<option value="1"> Male accomodation</option>
 						<option value="2"> Female accomodation</option>

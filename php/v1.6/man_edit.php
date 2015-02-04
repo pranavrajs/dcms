@@ -22,7 +22,7 @@
 							$result=mysql_query($query);
 							if($result) {
 						?>			
-							<select name="id">
+							<select name="id" class="form-control">
 								<?php
 										while($res=mysql_fetch_array($result)) {
 											echo"<option value ='".$res['id']."'>".$res['fname']." ".$res['lname']."</option>";										
@@ -43,7 +43,7 @@
 							$result=mysql_query($query);
 							if($result) {
 						?>			
-							<select name="event">
+							<select name="event" class="form-control">
 								<?php
 										while($res=mysql_fetch_array($result)) {
 											echo"<option value ='".$res['id']."'>".$res['name']."</option>";										

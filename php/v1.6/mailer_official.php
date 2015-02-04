@@ -15,8 +15,8 @@
 		
 			$res=mysql_fetch_array($result) or die(mysql_error());
 ?>
-	<div class="box span12">
-		<div class="box-content">
+	<div class="row">
+		<div class="col-lg-12">
 		<legend>Send Mail</legend>
 			<p style="color:red;">Use this mail only when needed .</p>
 			<br>	
@@ -24,19 +24,19 @@
 				<table class="table table-striped table-bordered bootstrap-datatable ">
 					<tr>
 						<td>From 
-						<td><input type="email" readonly name="fromemail" value="<?php echo $res['email_drs'];?>"></td>
+						<td><input type="email" class="form-control" readonly name="fromemail" value="<?php echo $res['email_drs'];?>"></td>
 					</tr>
 					<tr>
 						<td>To</td>
-						<td><input type="email" name="to"></td>
+						<td><input type="email" class="form-control" name="to"></td>
 					</tr>
 					<tr>
 						<td>Subject</td>
-						<td><input type="text" name="subject"></td>
+						<td><input type="text" class="form-control" name="subject"></td>
 					</tr>
 					<tr>
 						<td>Body</td>
-						<td><textarea class="cleditor" name="body"></textarea></td>
+						<td><textarea class="cleditor" name="body" style="width:100%"></textarea></td>
 					</tr>
 				</table>
 				<div class="form-actions">
