@@ -9,8 +9,8 @@
  		header('Location:index.php');
 	if(!isset($_POST['submit'])) { 
 		?>
-		<div class="box span12">
-	<div class="box-content">
+		<div class="row">
+	<div class="col-lg-12">
 	<legend>Group Registration Details</legend>	
 	<form action="grp_reg_det.php" method="POST">
 	<table class="table table-striped table-bordered bootstrap-datatable ">
@@ -22,7 +22,7 @@
 	if(!$result)
 		echo"error";
 ?>
-			<td>		<select name="eve">
+			<td>		<select name="eve"  class="form-control">
 						<?php
 							$num=mysql_num_rows($result) or die(mysql_error());
 							if(!$num)

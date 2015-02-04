@@ -7,14 +7,14 @@ require "core.inc.php";
  		}
 require 'idi.php';		
 include'header.php';
-ORM::configure('mysql:host=localhost;dbname=cetdriss_drishti');
-	ORM::configure('username', 'cetdriss_pranav');
-	ORM::configure('password', 'kindappan123');
+ORM::configure('mysql:host=localhost;dbname=dcms');
+	ORM::configure('username', 'root');
+	ORM::configure('password', '');
 	
 	// connected
 ?>
-<div class="box span12">
-	<div class="box-content">	
+<div class="row">
+	<div class="col-lg-12">	
 	<legend>Manager details</legend>
 	<table class="table table-striped table-bordered bootstrap-datatable ">
 

@@ -31,7 +31,6 @@ THE SOFTWARE.
 	<meta name="author" content="Pranav" >
 	<title>Drishti Content Management System V1.6</title>
 	<!-- The styles -->
-	<link id="bs-css" href="css/bootstrap-cerulean.css" rel="stylesheet">
 	<style type="text/css">
 	  body {
 		padding-bottom: 40px;
@@ -40,22 +39,12 @@ THE SOFTWARE.
 		padding: 9px 0;
 	  }
 	</style>
-	<link href="css/bootstrap-responsive.css" rel="stylesheet">
-	<link href="css/charisma-app.css" rel="stylesheet">
-	<link href="css/jquery-ui-1.8.21.custom.css" rel="stylesheet">
-	<link href='css/fullcalendar.css' rel='stylesheet'>
-	<link href='css/fullcalendar.print.css' rel='stylesheet'  media='print'>
-	<link href='css/chosen.css' rel='stylesheet'>
-	<link href='css/uniform.default.css' rel='stylesheet'>
-	<link href='css/colorbox.css' rel='stylesheet'>
-	<link href='css/jquery.cleditor.css' rel='stylesheet'>
-	<link href='css/jquery.noty.css' rel='stylesheet'>
-	<link href='css/noty_theme_default.css' rel='stylesheet'>
-	<link href='css/elfinder.min.css' rel='stylesheet'>
-	<link href='css/elfinder.theme.css' rel='stylesheet'>
-	<link href='css/jquery.iphone.toggle.css' rel='stylesheet'>
-	<link href='css/opa-icons.css' rel='stylesheet'>
-	<link href='css/uploadify.css' rel='stylesheet'>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<!--
+	<link href="css/font-awesome.min.css" rel="stylesheet">-->
+	<link href="css/metisMenu.min.css" rel="stylesheet">
+	<link href="css/sb-admin-2.css" rel="stylesheet">
+	<link href="css/custom.css" rel="stylesheet">
 
 	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
@@ -70,7 +59,7 @@ THE SOFTWARE.
 <body>
 	<?php if(!isset($no_visible_elements) || !$no_visible_elements)	{ ?>
 	<!-- topbar starts -->
-	<div class="navbar">
+	<nav class="navbar navbar-default navbar-static-top" role="navigation" style="">
 		<img src="img/logo.png" style="position:absolute;top:0;left:40px;width:120px;height:40px;z-index:100000;" alt="" >
 		<div class="navbar-inner">
 		
@@ -84,8 +73,8 @@ THE SOFTWARE.
 					
 				<!-- user dropdown starts -->
 				<div class="btn-group pull-right" >
-					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-						<i class="icon-user"></i><span class="hidden-phone"> <?php echo $_SESSION['username']; ?></span>
+					<a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
+						<i class="fa fa-user fa-fw"></i><span class="hidden-phone"> <?php echo $_SESSION['username']; ?></span>
 						<span class="caret"></span>
 					</a>
 					<ul class="dropdown-menu">
@@ -94,136 +83,266 @@ THE SOFTWARE.
 				</div>
 				<!-- user dropdown ends -->
 				
-		<!--		<div class="top-nav nav-collapse">
-					<ul class="nav">
-						<li><a href="#">Visit Site</a></li>
-						<li>
-							<form class="navbar-search pull-left">
-								<input placeholder="Search" class="search-query span2" name="query" type="text">
-							</form>
-						</li>
-					</ul>
-				</div><!--/.nav-collapse -->
 				
 			</div>
 		</div>
 	</div>
 	<!-- topbar ends -->
 	<?php } ?>
-	<div class="container-fluid">
-		<div class="row-fluid">
+
+
 		<?php if(!isset($no_visible_elements) || !$no_visible_elements) { ?>
 		
 			<!-- left menu starts -->
-			<div class="span2 main-menu-span">
-				<div class="well nav-collapse sidebar-nav">
-					<ul class="nav nav-tabs nav-stacked main-menu">
-						<li class="nav-header hidden-tablet">Main</li>
-						<li><a class="ajax-link" href="login.php"><i class="icon-home"></i><span class="hidden-tablet"> Dashboard</span></a></li>
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+
+
+                    <li>
+                    	<a href="login.php">Dashboard</span></a></a>
+                    </li>
+
 <?php
 if($_SESSION['adm_lvl']==0) {
+?>
 
-?>			<li class="nav-header hidden-tablet">Event Managers</li>
+
+                    <li>
+                    	<a href="#">Event Managers<span class="fa arrow"></span></a></a>
+
+                    	<ul class="nav nav-second-level">
+
+
+							<li><a class="ajax-link" href="add-managers.php"><i class=""></i>Assign Event Managers</a></li>
+							<li><a class="ajax-link" href="man_edit.php"><i class=""></i>Change Managers</a></li>			
+
 					
-			<li><a class="ajax-link" href="add-managers.php"><i class="icon-glass"></i><span class="hidden-tablet"> Assign Event Managers</span></a></li>
-			<li><a class="ajax-link" href="man_edit.php"><i class="icon-headphones"></i><span class="hidden-tablet"> Change Managers</span></a></li>			
-		<?php
+
+	<?php
 			}
-			?>
-			<li><a class="ajax-link" href="event_managerlist.php"><i class="icon-check"></i><span class="hidden-tablet"> Event Managers List </span></a></li>
+		?>
+
+							<li><a class="ajax-link" href="event_managerlist.php"><i class=""></i>Event Managers List</a></li>
 			<?php 
 				if($_SESSION['adm_lvl']==2) {			
 			?>	
-					<li><a class="ajax-link" href="stud_det_nss.php"><i class="icon-check"></i><span class="hidden-tablet">Scan QR</span></a></li>
+							<li><a class="ajax-link" href="stud_det_nss.php"><i class=""></i>Scan QR</a></li>
 			<?php } ?>	
 			<?php 
 				if($_SESSION['adm_lvl']==4) {			
 			?>	
-					<li><a class="ajax-link" href="qrcode_eve_man.php"><i class="icon-check"></i><span class="hidden-tablet">Scan QR</span></a></li>
+							<li><a class="ajax-link" href="qrcode_eve_man.php"><i class=""></i>Scan QR</a></li>
 			<?php } ?>	
 				
 			<?php
 			if($_SESSION['adm_lvl']==4 || $_SESSION['adm_lvl']==0) {
 				?>
-			<li><a class="ajax-link" href="mailer_official.php"><i class="icon-eye-open"></i><span class="hidden-tablet">Send mail</span></a></li>
+							<li><a class="ajax-link" href="mailer_official.php"><i class=""></i>Send mail</a></li>
 			
 			<?php
-			}
-			if($_SESSION['adm_lvl']!=4) {
-				?>
-						
+			}?>
 					
-		<!--					<li><a class="ajax-link" href="form.php"><i class="icon-edit"></i><span class="hidden-tablet"> Forms</span></a></li>
-		-->				<li class="nav-header hidden-tablet">  Individual Registration </li>
-						<li><a class="ajax-link" href="stud_det.php"><i class="icon-align-justify"></i><span class="hidden-tablet"> Registration List</span></a></li>
-						<li><a class="ajax-link" href="std_reg.php"><i class="icon-calendar"></i><span class="hidden-tablet"> New Registration</span></a></li>
-						<li class="nav-header hidden-tablet">  Group Registration </li>
-						<li><a class="ajax-link" href="grp_nss.php"><i class="icon-calendar"></i><span class="hidden-tablet"> Group Registration</span></a></li>
-						<li><a class="ajax-link" href="grp_reg_det.php"><i class="icon-calendar"></i><span class="hidden-tablet"> Group Details</span></a></li>
-						
-<?php } ?>			
-		<?php		
+
+                    	</ul>
+                    </li>
+
+			<?php if($_SESSION['adm_lvl']!=4) {
+				?>
+
+
+
+                    <li>
+                    	<a href="#">Individual Registration<span class="fa arrow"></span></a></a>
+
+                    	<ul class="nav nav-second-level">
+                    		<li>
+                    			<a href="stud_det.php">Registration List</a>
+                    		</li>
+                    		<li>
+                    			<a href="std_reg.php">New Registration</a>
+                    		</li>
+                    	</ul>
+                    </li>
+
+                    <li>
+                    	<a href="#">Group Registration<span class="fa arrow"></span></a></a>
+
+                    	<ul class="nav nav-second-level">
+                    		<li>
+                    			<a href="grp_nss.php">Group Registration</a>
+                    		</li>
+                    		<li>
+                    			<a href="grp_reg_det.php">Group Details</a>
+                    		</li>
+                    	</ul>
+                    </li>
+
+<?php } 	
 	if($_SESSION['adm_lvl']==4) {
 	?>
-					<li class="nav-header hidden-tablet">  Group Registration Details</li>
-					<li><a class="ajax-link" href="grp_reg_det.php?var=<?php echo $_SESSION['event']; ?>"><i class="icon-calendar"></i><span class="hidden-tablet"> Group Details</span></a></li>
-					<li><a class="ajax-link" href="grp_nss.php?var=<?php echo $_SESSION['event']; ?>"><i class="icon-calendar"></i><span class="hidden-tablet"> Add new group</span></a></li>
-					<li class="nav-header hidden-tablet">Event Details </li><li><?php echo"<a class=\"ajax-link\" href=\"eve_det.php?var=".$_SESSION['event']."\">"; ?><i class="icon-download-alt"></i><span class="hidden-tablet"> View Event Details</span></a></li>
-						<li><?php echo"<a class=\"ajax-link\" href=\"eve_edit.php?var=".$_SESSION['event']."\">"; ?><i class="icon-leaf"></i><span class="hidden-tablet"> Edit Event Details</span></a></li>
-	<?php }	
+
+
+
+                    <li>
+                    	<a href="#">Group Registration Details<span class="fa arrow"></span></a></a>
+
+                    	<ul class="nav nav-second-level">
+                    		<li>
+                    			<a href="grp_reg_det.php?var=<?php echo $_SESSION['event']; ?>">Group Details</a>
+                    		</li>
+                    		<li>
+                    			<a href="grp_nss.php?var=<?php echo $_SESSION['event']; ?>">Add New Group</a>
+                    		</li>
+                    	</ul>
+                    </li>
+
+
+
+                    <li>
+                    	<a href="#">Event Details<span class="fa arrow"></span></a></a>
+
+                    	<ul class="nav nav-second-level">
+                    		<li>
+                    			<a href="eve_det.php?var=<?php echo $_SESSION['event']; ?>">View Event Details</a>
+                    		</li>
+                    		<li>
+                    			<a href="eve_edit.php?var=<?php echo $_SESSION['event']; ?>">Edit Event Details</a>
+                    		</li>
+                    	</ul>
+                    </li>
+
+
+
+		<?php }	
 		else if($_SESSION['adm_lvl']==0)  {	
-		?>			<li class="nav-header hidden-tablet">Event Details </li><li><a class="ajax-link" href="add-events.php"><i class="icon-fire"></i><span class="hidden-tablet"> Add New Events</span></a></li>
-						<li><a class="ajax-link" href="eve_det.php"><i class="icon-download-alt"></i><span class="hidden-tablet"> View Event Details</span></a></li>
-						<li><a class="ajax-link" href="eve_edit.php"><i class="icon-leaf"></i><span class="hidden-tablet"> Edit Events</span></a></li>
+		?>	
+
+
+
+                    <li>
+                    	<a href="#">Event Details<span class="fa arrow"></span></a></a>
+
+                    	<ul class="nav nav-second-level">
+                    		<li>
+                    			<a href="eve_det.php">View Event Details</a>
+                    		</li>
+                    		<li>
+                    			<a href="eve_edit.php">Edit Events</a>
+                    		</li>
+                    	</ul>
+                    </li>
+
+
 <?php } 
 		else 
  ?>
-			<!--			<li><a class="ajax-link" href="file-manager.php"><i class="icon-folder-open"></i><span class="hidden-tablet"> File Manager</span></a></li>
-					-->	<li class="nav-header hidden-tablet">Prize Details</li>
+
+
+                 <li>
+                    	<a href="#">Prize Details<span class="fa arrow"></span></a></a>
+
+                    	<ul class="nav nav-second-level">
+
+
 <?php
 			if($_SESSION['adm_lvl'] != 4)
 			{ 				
 						
 ?>
-<li><a class="ajax-link" href="prizes.php"><i class="icon-star"></i><span class="hidden-tablet"> 	Add Prize details </span></a></li>
-<li><a class="ajax-link" href="prize_view.php"><i class="icon-star"></i><span class="hidden-tablet"> 	View Prize Details</span></a></li>
+
+
+                    		<li>
+                    			<a href="prizes.php">Add Prize Details</a>
+                    		</li>
+                    		<li>
+                    			<a href="prize_view.php">View Prize Details</a>
+                    		</li>
+
 <?php
 			}
 			else {				
 ?>
-		<li><a class="ajax-link" href="prizes.php?var=<?php echo $_SESSION['event']; ?>"><i class="icon-star"></i><span class="hidden-tablet"> 	Prizes </span></a></li>	
+                    		<li>
+                    			<a href="prizes.php?var=<?php echo $_SESSION['event']; ?>">Prizes</a>
+                    		</li>
 <?php
 		}
 ?>
-						<li class="nav-header hidden-tablet">Participation Details</li>
+                    	</ul>
+                    </li>
+
+                    <li>
+                    	<a href="#">Participation Details<span class="fa arrow"></span></a></a>
+
+                    	<ul class="nav nav-second-level">
+                    		<li>
+                    			<a href="eve_det.php">View Event Details</a>
+                    		</li>
+                    		<li>
+                    			<a href="eve_edit.php">Edit Events</a>
+                    		</li>
+
 <?php	
 	if($_SESSION['adm_lvl']==4) {
-?>					<li><?php echo"<a class=\"ajax-link\" href=\"eve_part.php?var=".$_SESSION['event']."\">"; ?><i class="icon-signal"></i><span class="hidden-tablet"> Event Participation List</span></a></li>
-	<?php }	
+?>
+                    		<li>
+                    			<a href="eve_part.php?var=<?php echo $_SESSION['event'] ?>">Event participation list</a>
+                    		</li>
+<?php }	
 		else {	
-		?>			<li><a class="ajax-link" href="eve_part.php"><i class="icon-signal"></i><span class="hidden-tablet"> Event Participation List</span></a></li>
+		?>
+                    		<li>
+                    			<a href="eve_part.php">Event Participation List</a>
+                    		</li>
 <?php } ?>
-				
+                    	</ul>
+                    </li>
 	<?php	
 	if($_SESSION['adm_lvl']==0 || $_SESSION['adm_lvl']==2) {
 ?>						
-						<li class="nav-header hidden-tablet">Accomodation Details</li>	
-						<li><a href="accomodation.php"><i class="icon-ban-circle"></i><span class="hidden-tablet"> Get accomodation List </span></a></li>
+
+                    <li>
+                    	<a href="#">Accomodation Details<span class="fa arrow"></span></a></a>
+
+                    	<ul class="nav nav-second-level">
+                    		<li>
+                    			<a href="accomodation.php">Accomodation List</a>
+                    		</li>
+                    	</ul>
+                    </li>
+
+
+
 <?php } ?>
-						<li class="nav-header hidden-tablet">Collegewise Standings</li>
-						<li><a href="clg_std.php"><i class="icon-lock"></i><span class="hidden-tablet">Collegewise Standings</span></a>
+
+                    <li>
+                    	<a href="#">Collegewise Standings<span class="fa arrow"></span></a></a>
+
+                    	<ul class="nav nav-second-level">
+                    		<li>
+                    			<a href="clg_std.php">View Event Details</a>
+                    		</li>
 	<?php	
 	if($_SESSION['adm_lvl']==2|| $_SESSION['adm_lvl']==0) {
 ?>						
-						
-						<li><a href="add-college.php"><i class="icon-lock"></i><span class="hidden-tablet"> Add new College</span></a></li>
-<?php }  ?>
-					</ul>
-					<label id="for-is-ajax" class="hidden-tablet" for="is-ajax"><input id="is-ajax" type="checkbox"> Ajax on menu</label>
-				</div><!--/.well -->
-			</div><!--/span-->
+
+                    		<li>
+                    			<a href="add-college.php">Add new College</a>
+                    		</li>
+		
+		<?php }  ?>
+
+                    	</ul>
+                    </li>
+
+				</ul>
+
+			</nav><!--/span-->
 			<!-- left menu ends -->
 			
-			<div id="content" class="span10">
+
+			<div id="page-wrapper">
 			<!-- content starts -->
 			<?php } ?>

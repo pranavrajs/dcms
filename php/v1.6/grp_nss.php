@@ -17,7 +17,7 @@
 	<table class="table table-striped table-bordered bootstrap-datatable ">
 		<tr>
 			<td>Select an event </td>
-			<td>		<select name="eve">
+			<td>		<select name="eve"  class="form-control">
 <?php						
 		$query="SELECT id,name FROM events ORDER BY id ASC";
 					$result=mysql_query($query);
@@ -54,7 +54,7 @@ else {
 		<tr>
 			<td>Member </td>
 			<td>
-			<select name="event[]">
+			<select name="event[]"  class="form-control">
 			<option value="0">NULL</option>
 			<?php			
 				$query2="SELECT * FROM event_reg LEFT OUTER JOIN students on event_reg.drs_id = students.drishti_id WHERE event_reg.eve_id = ".$_POST['eve']."";

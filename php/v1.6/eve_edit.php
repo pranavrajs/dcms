@@ -11,14 +11,14 @@
 	if(!isset($_GET['var'])) {
 			if(!isset($_POST['submit'])) {
 ?>
-<div class="box span12">
-	<div class="box-content">
+<div class="row">
+	<div class="col-lg-12">
 	<legend>Edit Event Details</legend>	
 	<form action="eve_edit.php" method="POST">
 	<table class="table table-striped table-bordered bootstrap-datatable ">
 		<tr>
 			<td>Select an event</td>
-			<td>		<select name="eve">
+			<td>		<select name="eve"  class="form-control">
 <?php						
 		$query="SELECT id,name FROM events ORDER BY id ASC";
 					$result=mysql_query($query);
@@ -46,8 +46,8 @@
 					$result=mysql_query($query);
 					$res=mysql_fetch_array($result);					
 					?>
-					<div class="box span12">
-	<div class="box-content">
+					<div class="row">
+	<div class="col-lg-12">
 		
 <legend>Edit details of <?php echo $res['name'];?></legend>
 <fieldset>
@@ -56,18 +56,18 @@
 <table class="table table-striped table-bordered bootstrap-datatable ">
 	<tr>
 	<td>Name of the event</td>
-	<td>	<input type="text" name='name' readonly value="<?php echo $res['name'];?>"></td>
+	<td>	<input type="text" name='name'  class="form-control" readonly value="<?php echo $res['name'];?>"></td>
 </tr>
 
 <tr>
 	<td><b>Event Description</b><p style="width:230px; text-align:justify;">(Donot copy text and paste it here. Type the text because copying cause different formatting of text. Dont use font and font size option here . It may lead
 	to different appearence in drishti website .)</p></td>
-	<td><textarea class="ckeditor"  name='descr'><?php echo $res['descr'];?></textarea></td>
+	<td><textarea class="ckeditor"  class="form-control"  name='descr'><?php echo $res['descr'];?></textarea></td>
 </tr>
 <tr>
 	<td><b>Rules and Regulations</b> <p style="width:230px; text-align:justify;">(Donot copy text and paste it here. Type the text because copying cause different formatting of text. Dont use font and font size option here . It may lead
 	to different appearence in drishti website .)</p></td>
-	<td><textarea class="ckeditor" name='eve_format'><?php echo $res['eve_format'];?></textarea></td>
+	<td><textarea class="ckeditor"  class="form-control" name='eve_format'><?php echo $res['eve_format'];?></textarea></td>
 </tr>
 
 <?php
@@ -77,7 +77,7 @@ if($res['group']==7 || $res['id']==26)
 <tr>
 	<td><b>Problem Statement</b> <p style="width:230px; text-align:justify;">(Donot copy text and paste it here. Type the text because copying cause different formatting of text. Dont use font and font size option here . It may lead
 	to different appearence in drishti website .)</p></td>
-	<td><textarea class="ckeditor" name='pbm_stat'><?php echo $res['pbm_stat'];?></textarea></td>
+	<td><textarea class="ckeditor" name='pbm_stat'  class="form-control"><?php echo $res['pbm_stat'];?></textarea></td>
 </tr>
 
 <?php
@@ -89,11 +89,11 @@ if($res['group']==7 || $res['id']==26)
 ?>
 <tr>
 	<td><b>First Prize Money</b><p style="width:230px; text-align:justify;">(You can update this only once) </p></td>
-	<td><input type="text" name='prize1' <?php echo $read; ?> value="<?php echo $res['prize1'];?>">	</td>
+	<td><input type="text"  class="form-control" name='prize1' <?php echo $read; ?> value="<?php echo $res['prize1'];?>">	</td>
 </tr>
 <tr>
 	<td><b>Second Prize Money</b><p style="width:230px; text-align:justify;">(You can update this only once )</p></td>
-	<td>	<input type="text" name='prize2' <?php echo $read; ?> value="<?php echo $res['prize2'];?>"></td>
+	<td>	<input type="text"  class="form-control" name='prize2' <?php echo $read; ?> value="<?php echo $res['prize2'];?>"></td>
 </tr>
 </table>	
 <div class="form-actions">

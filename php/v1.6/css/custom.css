@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  font-family: "Ubuntu", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  color: #555555;
+  background-color: #ffffff;
+  text-shadow:0 -1px 1px rgba(0, 0, 0, 0.2)
+}
+
+.navbar {
+  overflow: visible;
+  margin-bottom: 18px;
+}
+.navbar-inner {
+  min-height: 40px;
+  padding:5px 20px 5px 20px;
+  background-color: #50a8dc;
+  }
+.input-group{
+  margin:5px;
+}

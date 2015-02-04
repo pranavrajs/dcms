@@ -15,19 +15,19 @@ if(isset($_POST['submit'])) {
 	header('Location:index.php');
 }
 ?>
-<div class="box span12">
-<div class="box-content">
+<div class="row">
+<div class="col-lg-12">
 <fieldset>
 <legend>Add New College </legend>
 <form action="<?php $current_file; ?>" method="POST">
 	<table class="table table-striped table-bordered bootstrap-datatable ">
 <tr>
 	<td>Name of the College</td>
-	<td>	<input type="text" name='college'></td>
+	<td>	<input type="text" name='college'  class="form-control"></td>
 </tr>
 </table>
 <div class="form-actions">
-	<input type="submit" class="btn btn-primary"name="submit" value="Submit">
+	<input type="submit" class="btn btn-primary"name="submit" value="Submit"  class="form-control">
 </div>
 </form>
 </div>

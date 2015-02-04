@@ -50,7 +50,7 @@ if(!isset($_GET['var']))
 						
 
 							  <tr>
-								  <th>Dristhi Id</th>
+								  <th>Dhwani Id</th>
 								  <th>Name</th>
 								  <th>Email</th>
 								  <th>College</th>

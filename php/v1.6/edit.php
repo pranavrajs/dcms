@@ -68,20 +68,20 @@ $('#pay').click(function (){
 				<table class="table table-striped table-bordered bootstrap-datatable ">
 					<tr>
 						<td> Dristhi ID </td>
-							<td>	<?php echo "	<input readonly  name=\"drishti_id\"   type=\"text\" value = \"$id\"placeholder=\"Drishti ID\"  /></td>	"?>
+							<td>	<?php echo "	<input readonly  name=\"drishti_id\"  class=\"form-control\"  type=\"text\" value = \"$id\"placeholder=\"Drishti ID\"  /></td>	"?>
 					</tr>
 					<tr>
 						<td> Name </td>
-							<td>	<?php echo "	<input readonly  name=\"name\"   type=\"text\" value = \"$name\"placeholder=\"Name\"  /></td>	"?>
+							<td>	<?php echo "	<input readonly  name=\"name\"  class=\"form-control\"   type=\"text\" value = \"$name\"placeholder=\"Name\"  /></td>	"?>
 					</tr>
 					<tr>
 						<td> Email </td>
-							<td>	<?php echo "	<input readonly  name=\"email\"   type=\"text\" value = \"$email\"placeholder=\"Email\"  /></td>	"?>
+							<td>	<?php echo "	<input readonly  name=\"email\"  class=\"form-control\"   type=\"text\" value = \"$email\"placeholder=\"Email\"  /></td>	"?>
 					</tr>
 					<tr>
 						<td> College </td>
 							<td>	
-								<select name="college" id="selectError" data-rel="chosen">
+								<select name="college" id="selectError" data-rel="chosen" class="form-control">
 									<?php 
 											$query="SELECT * FROM college ORDER BY CollegeId ASC";
 											$result=mysql_query($query) or die(mysql_error());
@@ -100,15 +100,15 @@ $('#pay').click(function (){
 					</tr>
 					<tr>
 						<td> Phone </td>
-							<td>	<?php echo "	<input name=\"phone\"   type=\"text\" value = \"$phone1\"placeholder=\"Phone\"  /></td>	"?>
+							<td>	<?php echo "	<input name=\"phone\" class=\"form-control\"   type=\"text\" value = \"$phone1\"placeholder=\"Phone\"  /></td>	"?>
 					</tr>
 					<tr style="visibility:hidden;display:none;">
 						<td style="visibility:hidden;"> Phone 2</td>
-							<td>	<?php echo "	<input name=\"phone2\" style=\"visibility:hidden;\"  type=\"text\" value = \"$phone2\"placeholder=\"Phone2\"  /></td>	"?>
+							<td>	<?php echo "	<input name=\"phone2\" class=\"form-control\" style=\"visibility:hidden;\"  type=\"text\" value = \"$phone2\"placeholder=\"Phone2\"  /></td>	"?>
 					</tr>
 					<tr>
 						<td> Accomodation </td>
-							<td><select name="accomodation">
+							<td><select name="accomodation"  class="form-control">
 <?php 
 if($acc==1) 
 	echo "<option value=\"0\"> No accomodation</option><option selected value=\"1\"> Male accomodation</option><option value=\"2\"> Female accomodation</option>";
@@ -126,7 +126,7 @@ else
 					<tr>
 						<td> Payment Details </td>		
 								<td>
-										<select name="payment" id="pay" multiple="multiple">
+										<select name="payment" id="pay" multiple="multiple"  class="form-control">
 	
 <?php 
 if($pay==1) 
@@ -208,7 +208,7 @@ else
 										
 										echo"<tr>";
 										echo "<td>".$res['name']."</td>";
-										echo "<td><input type=\"checkbox\"  name=\"eve_arr[]\" value='".$res['id']."'  /></td>";	
+										echo "<td><input  type=\"checkbox\"  name=\"eve_arr[]\" value='".$res['id']."'  /></td>";	
 										echo '</tr>';	
 								//	$checked="";
 									}

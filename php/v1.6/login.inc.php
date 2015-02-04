@@ -56,18 +56,21 @@ require"connect.inc.php";
 }
 ?>
 <form action="<?php $current_file; ?>" method="POST" class="form-horizontal" >
+
+
+
 	
-			<div class="input-prepend" title="Email" data-rel="tooltip">
-								<span class="add-on"><i class="icon-user"></i></span><input autofocus class="input-large span10" name="email" id="username" type="text"  />
+			<div class="input-group" title="Email" data-rel="tooltip">
+								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input autofocus class="form-control" placeholder="Email Address" name="email" id="username" type="text"  />
 							</div>
 							<div class="clearfix"></div>
 
-							<div class="input-prepend" title="Password" data-rel="tooltip">
-								<span class="add-on"><i class="icon-lock"></i></span><input class="input-large span10" name="pass" id="password" type="password"  />
+							<div class="input-group" title="Password" data-rel="tooltip">
+								<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input class="form-control" name="pass" id="password" type="password" placeholder="Password" />
 							</div>
 							<div class="clearfix"></div>
 
-							<p class="center span5">
+							<p class="text-center">
 							<button type="submit" class="btn btn-primary" name="submit" value="submit">Login</button>
 							</p>
 </form>

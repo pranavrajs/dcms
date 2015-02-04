@@ -17,8 +17,8 @@
 			if(!$num)
 			{
 			?>
-<div class="row-fluid sortable">		
-	<div class="box span12">
+<div class="row">		
+	<div class="col-lg-12">
 			<div class="box-header well" data-original-title>
 						<div class="box-icon">
 							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
