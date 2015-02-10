@@ -47,12 +47,13 @@
 <?php	
 	}
 	else {
-				$query = "SELECT * FROM `group` WHERE event = ".$_POST['eve']."";
+				//$query = "SELECT group_reg.group_id,stud_id FROM group_reg RIGHT JOIN groups on group_reg.group_id = groups.group_id WHERE event_id =".$_POST['eve']."";
+				$query = "SELECT `group_id` FROM `group_reg` WHERE `event_id` = ".$_POST['eve'];
 				$result = mysql_query($query) or die(mysql_error());
 				if($result)
 				{
-					$num = mysql_num_rows($result);
-					if($num)
+					$num_groups = mysql_num_rows($result);
+					if($num_groups)
 					{
 						
 ?>
@@ -102,26 +103,38 @@
 							</tr>
 							</thead>
 							<tbody>
+
+
 							<?php
 									
 									while($res2 = mysql_fetch_array($result)) {
 											$i=1;
 											echo "<tr>";
-											echo "<td>".$res2['id']."</td>";
+											echo "<td>".$res2['group_id']."</td>";
+
+											$q3 = "SELECT groups.stud_id,students.name FROM groups JOIN students on groups.stud_id = students.drishti_id WHERE group_id = ".$res2['group_id'];	
+											$r3 = mysql_query($q3);
+
+
 												for($i=1;$i<= $res['max_no']; $i++) {														
-										?>
+												?>
 												<td><?php 
-													$q3 = "SELECT name FROM students WHERE drishti_id = ".$res2['mem'.$i]."";	
-													$r3 = mysql_query($q3);
 													if($r3)
 													{
 														$res3 = mysql_fetch_array($r3);											
-												echo $res2['mem'.$i]."  ".$res3['name'] ?></td>
+													echo $res3['stud_id']."  ".$res3['name'] ?></td>
 										<?php
 													}
 												}
 											echo "</tr>";
 										}
+							?>
+
+							<?php
+
+
+
+
 							?>
 							</tbody>
 							</table>

@@ -10,7 +10,7 @@ if($_SESSION['adm_lvl']!=4) {
 include('header.php'); 
 if(!isset($_GET['var']))
 	{		 
-	$query="SELECT * FROM  students LEFT JOIN college on students.college=college.collegeid  ORDER BY  students.drishti_id ASC";
+	$query="SELECT * FROM  students LEFT JOIN college on students.college=college.collegeid LEFT JOIN std_offline on students.drishti_id=std_offline.stud_id ORDER BY  students.drishti_id ASC";
 	$result=mysql_query($query) or die(mysql_error());
 	$num=mysql_num_fields($result);
 	
@@ -21,6 +21,28 @@ if(!isset($_GET['var']))
 		var x = confirm('Confirm Deletion');
 		return x;
 	}
+</script>
+
+<script type="text/javascript">
+	
+$(window).load(function(){
+	var v = $('.generate>a');
+	v.click(function(){
+		id = $(this).data('id');
+		data = {'id':id};
+		$.post('offline_generate.php',data,function(res,status){
+			if(status=='success'){
+				if(res)
+					$('#dhwani_'+id).html(res);
+			}
+			else
+				alert('Something went wrong. Try again')
+		});
+	});
+});
+
+
+
 </script>
 <?php ?>
 
@@ -54,6 +76,9 @@ if(!isset($_GET['var']))
 								  <th>Name</th>
 								  <th>Email</th>
 								  <th>College</th>
+								  <th>Offline ID</th>
+								  <th>Status</th>
+								  <th>Actions</th>
 					<!--			  <th>Phone</th>
 								  <th>Phone 2</th>
 								 <th>Registration</th>
@@ -73,6 +98,11 @@ if($num!=0)
 					echo "<td class=\"center\">".$res['name']."</td>";
 					echo "<td class=\"center\"><a  href=\"stud_det.php?var=".$res['drishti_id']."\"> ".$res['email']."	</a></td>";
 					echo "<td class=\"center\"> ".$res['CollegeName']."</td>";
+
+					if($res['offline_id'])
+						echo "<td class=\"center\"> ".$res['offline_id']."</td>";
+					else
+						echo "<td class=\"center generate\" id=\"dhwani_".$res['drishti_id']."\"><a href=\"javascript:void(0)\" data-id=\"".$res['drishti_id']."\">Generate</a></td>";
 				//	echo "<td class=\"center\">".$res['phone']."</td>";
 				//	echo "<td class=\"center\">".$res['phone2']."</td>";
 					if($res['reg_bit']==1)	
@@ -227,6 +257,7 @@ if($num!=0)	{
 <div class="form-actions">
 	<a class="btn btn-primary" href="stud_det.php">Submit</a>
 </div>
+
 <?php } 
 }
 else 

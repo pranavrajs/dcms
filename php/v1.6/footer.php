@@ -33,11 +33,6 @@
 	<!-- Placed at the end of the document so the pages load faster -->
 
 	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/metisMenu.min.js"></script>
-	<script src="js/sb-admin-2.js"></script>
-
 
 	
 	<?php //Google Analytics code for tracking my demo site, you can remove this.
