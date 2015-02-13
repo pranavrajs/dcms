@@ -46,7 +46,7 @@
 	}
 	else {
 		$id = $_POST['eve'];
-		$query = "SELECT * FROM events WHERE id = ".$id."";
+		$query = "SELECT * FROM events WHERE id = ".$id;
 		$result = mysql_query($query);
 		if($result)
 		{
@@ -57,6 +57,7 @@
 				if($res['max_no']==0) {
 					$q2 = "SELECT * FROM prize WHERE event_id = ".$id."";
 					$r2 = mysql_query($q2);
+					//echo mysql_num_rows($r2);
 					if($r2) {
 						?>
 					<div class="row-fluid sortable">		
@@ -66,8 +67,13 @@
 						<table class="table table-striped table-bordered bootstrap-datatable datatable">
 						
 							<?php
+
+
 								
 								while($res2 = mysql_fetch_array($r2)) {
+
+
+
 										echo "<tr>";								
 										if($res2['pos']==1)
 											echo"<td>First Prize</td>";
@@ -99,13 +105,14 @@
 						
 	<div class="box span12">
 			<div class="box-content">
-						<legend>Prize details #</legend>	
+						<legend>Prize details # <?php echo $res['name']?> </legend>	
 		<table class="table table-striped table-bordered bootstrap-datatable datatable">
 									
 											
 						<?php
 						while($res = mysql_fetch_array($r2))
 						{
+							
 														
 							echo "<tr>";
 							if($res['pos']==1)
@@ -114,23 +121,32 @@
 											echo"<td>Second Prize</td>";
 							else 
 											echo "<td>Third Prize</td>";
-							$q3 = "SELECT * FROM `group` WHERE event = ".$res['event_id']." AND mem1 = ".$res['drs_id']."";
+						//	$q3 = "SELECT * FROM `groups` LEFT JOIN group_reg on groups.group_id = group_reg.group_id WHERE event_id = ".$res['event_id']." AND stud_id = ".$res['drs_id']."";
+							$q3 = "SELECT pos,group_id,stud_id FROM `prize` LEFT JOIN groups on groups.stud_id = prize.drs_id WHERE event_id = ".$res['event_id']." AND stud_id = ".$res['drs_id']." GROUP BY pos";
 							$r3 = mysql_query($q3) or die(mysql_error());	
+
+							$q4 = "SELECT max_no from events where id = ".$res['event_id'];
+							$r4 = mysql_query($q4) or die(mysql_error());	
+							$max = mysql_fetch_array($r4)['max_no'];
+
+							
 							if($r3)
 							{
 								$res2 = mysql_fetch_array($r3) or die(mysql_error());
+								$grp =  $res2['group_id'];
+
 								echo"<td><table>";
-								$i=1;							
-								while($i<= 6 )
+								$i=1;	$q4= "SELECT name,stud_id FROM groups LEFT JOIN students on groups.stud_id = students.drishti_id WHERE group_id = ".$grp."";
+											$r4=mysql_query($q4) or die(mysql_error());
+																	
+								while($i<=$max )
 								{
-									if($res2['mem'.$i]!= 0) {		
+									if(1) {		
 											echo"<tr>";
 																				
-											$q4= "SELECT * FROM students WHERE drishti_id = ".$res2['mem'.$i]."";
-											$r4=mysql_query($q4) or die(mysql_error());
 											if($r4) {
 															$res4=mysql_fetch_array($r4);
-															echo "<td>".$res4['name']."</td><td>".$res4['drishti_id']."</td>";												
+															echo "<td>".$res4['stud_id']." ".$res4['name']."</td><td>"."</td>";												
 											
 											echo"</tr>";
 											}					

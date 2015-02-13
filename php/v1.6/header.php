@@ -46,6 +46,13 @@ THE SOFTWARE.
 	<link href="css/sb-admin-2.css" rel="stylesheet">
 	<link href="css/custom.css" rel="stylesheet">
 
+	
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/metisMenu.min.js"></script>
+	<script src="js/sb-admin-2.js"></script>
+
+
 	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
 	  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>

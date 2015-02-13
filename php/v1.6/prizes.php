@@ -174,13 +174,13 @@
 								<select name="prize1">
 								<option value="0">--NULL--</option>
 								<?php
-											$query2="SELECT * FROM `group` LEFT outer JOIN students on group.mem1 = students.drishti_id WHERE group.event=".$_POST['eve']."";
+											$query2= "SELECT groups.group_id,groups.stud_id,students.name FROM `group_reg` LEFT JOIN groups on group_reg.group_id = groups.group_id LEFT JOIN students on groups.stud_id = students.drishti_id WHERE group_reg.event_id = ".$_POST['eve']." GROUP BY groups.group_id";
 											$result=mysql_query($query2) or die(mysql_error());
 											$num=mysql_num_rows($result) or die(mysql_error());
 											if($num)
 											{
 												while($res=mysql_fetch_array($result)) 
-													echo"<option value=\"".$res['mem1']."\">".$res['mem1']." ".$res['name']."</option>";
+													echo"<option value=\"".$res['stud_id']."\">".$res['stud_id']." ".$res['name']."</option>";
 											}							
 								?>								
 								</select>						
@@ -196,13 +196,13 @@
 								
 								<option value="0">--NULL--</option>
 								<?php
-											$query2="SELECT * FROM `group` LEFT outer JOIN students on group.mem1 = students.drishti_id WHERE group.event=".$_POST['eve']."";
+											//$query2="SELECT * FROM `group` LEFT outer JOIN students on group.mem1 = students.drishti_id WHERE group.event=".$_POST['eve']."";
 											$result=mysql_query($query2) or die(mysql_error());
 											$num=mysql_num_rows($result) or die(mysql_error());
 											if($num)
 											{
 												while($res=mysql_fetch_array($result)) 
-													echo"<option value=\"".$res['mem1']."\">".$res['mem1']." ".$res['name']."</option>";
+													echo"<option value=\"".$res['stud_id']."\">".$res['stud_id']." ".$res['name']."</option>";
 											}							
 								?>								
 								</select>						
@@ -217,13 +217,13 @@
 								<select name="prize3">
 								<option value="0">--NULL--</option>								
 								<?php
-											$query2="SELECT * FROM `group` LEFT outer JOIN students on group.mem1 = students.drishti_id WHERE group.event=".$_POST['eve']."";
+											//$query2="SELECT * FROM `group` LEFT outer JOIN students on group.mem1 = students.drishti_id WHERE group.event=".$_POST['eve']."";
 											$result=mysql_query($query2) or die(mysql_error());
 											$num=mysql_num_rows($result) or die(mysql_error());
 											if($num)
 											{
 												while($res=mysql_fetch_array($result)) 
-													echo"<option value=\"".$res['mem1']."\">".$res['mem1']." ".$res['name']."</option>";
+													echo"<option value=\"".$res['stud_id']."\">".$res['stud_id']." ".$res['name']."</option>";
 											}							
 								?>								
 								</select>						

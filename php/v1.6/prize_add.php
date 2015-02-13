@@ -5,7 +5,9 @@
 	if(isset($_POST['submit'])) {		
 		
 		if(isset($_POST['prize1']) && isset($_POST['prize2']) && $_POST['id']) {
-				$query="SELECT college FROM students WHERE drishti_id=".$_POST['prize1']."";
+
+	
+				$query="SELECT college FROM students WHERE drishti_id=".$_POST['prize1'];
 				$result=mysql_query($query) or die(mysql_error());	
 				if($result)
 				{
@@ -35,14 +37,14 @@
 													$q3="INSERT INTO prize (event_id,pos,cl_id,drs_id,points) VALUES (".$_POST['id'].",3,".$res['college'].",".$_POST['prize3'].",4)";		
 													$r3=mysql_query($q3) or die(mysql_error());
 													if($r3) {
-															header('Location:login.php');												
+															//header('Location:login.php');												
 													}
 												}
 								
 										}
 									}
 									else {
-											header('Location:login.php');												
+											//header('Location:login.php');												
 										}
 							}
 						}

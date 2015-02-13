@@ -9,16 +9,33 @@
 					foreach($_POST['event'] as $row) {
 						$sub[$i] = $row;					
 						$i++;				
-					}
+					}/*
 					if($i<7) {
 						while($i<7) {
 								$sub[$i] = 0;
 								$i++;
 						}
-					}
-					$query = "INSERT INTO `group` (event,mem1,mem2,mem3,mem4,mem5,mem6) VALUES (".$_GET['eveid'].",".$sub[0].",".$sub[1].",".$sub[2].",".$sub[3].",".$sub[4].",".$sub[5].")";
+					}*/
+					$query = "INSERT INTO `group_reg` VALUES (NULL,".$_GET['eveid'].")";
 					$result = mysql_query($query) or die(mysql_error());
-					if($result)
+
+
+					$query = "SELECT group_id FROM group_reg ORDER BY group_id DESC LIMIT 0,1";
+					$result = mysql_query($query) or die(mysql_error());
+
+					$group_id = mysql_fetch_array($result)['group_id'];
+
+					$flag = 1;
+
+					foreach($sub as $s){
+
+						echo $query = "INSERT INTO `groups` VALUES (NULL,".$group_id.",".$s.")";
+						$result = mysql_query($query) or die(mysql_error());
+						if(!$result)
+							$flag=0;
+					}
+
+					if($flag)
 					{
 						header('Location:stud_det.php');				
 					}	
