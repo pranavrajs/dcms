@@ -10,7 +10,7 @@ if($_SESSION['adm_lvl']!=4) {
 include('header.php'); 
 if(!isset($_GET['var']))
 	{		 
-	$query="SELECT * FROM  students LEFT JOIN college on students.college=college.collegeid LEFT JOIN std_offline on students.drishti_id=std_offline.stud_id ORDER BY  students.drishti_id ASC";
+	$query="SELECT * FROM  students LEFT JOIN college on students.college=college.collegeid LEFT JOIN std_offline on students.drishti_id=std_offline.stud_id ORDER BY  students.drishti_id DESC";
 	$result=mysql_query($query) or die(mysql_error());
 	$num=mysql_num_fields($result);
 	
@@ -77,7 +77,7 @@ $(window).load(function(){
 								  <th>Email</th>
 								  <th>College</th>
 								  <th>Offline ID</th>
-								  <th>Status</th>
+								  <th>Reg type</th>
 								  <th>Actions</th>
 					<!--			  <th>Phone</th>
 								  <th>Phone 2</th>
@@ -122,7 +122,7 @@ if($num!=0)
 					echo "</tr>";					
 					}					 
 					 else if($res['reg_bit']==2) 
-					 	echo "<td class=\"center\"><span class=\"label \">Cancelled</span>	</td><td></td>";  
+					 	echo "<td class=\"center\"><span class=\"label label-default \">Cancelled</span>	</td><td></td>";  
 					else					 
 					{
 					 echo"<td class=\"center\"><span class=\"label label-warning\">Online</span>	</td> ";	
@@ -184,7 +184,7 @@ else {
 	<?php
 if($num!=0)	{
  			while	($res=mysql_fetch_array($result)) {
-					echo"<tr><td class=\"center\"> Drishti ID </td> <td class=\"center\"> DRS ".$res['drishti_id']."</td></tr>"; 					
+					echo"<tr><td class=\"center\"> Dhwani ID </td> <td class=\"center\"> DWN".$res['drishti_id']."</td></tr>"; 					
 					echo"<tr><td class=\"center\"> Name </td> <td class=\"center\"> ".$res['name']."</td></tr>"; 					
 					echo"<tr><td class=\"center\"> Email </td> <td class=\"center\"> ".$res['email']."</td></tr>"; 					
 					echo"<tr><td class=\"center\"> College </td> <td class=\"center\"> ".$res['CollegeName']."</td></tr>"; 					
@@ -195,7 +195,7 @@ if($num!=0)	{
 					 else if($res['reg_bit']==0) 
 					 echo"<td class=\"center\"><span class=\"label label-warning\">Online</span>	</td> ";
 					else
-					 echo"<td class=\"center\"><span class=\"label \">Cancelled</span>	</td> ";
+					 echo"<td class=\"center\"><span class=\"labelc label-default \">Cancelled</span>	</td> ";
 					
 					 echo"</tr>";	
 					echo "<tr><td class=\"center\"> Activity </td> ";					
@@ -218,17 +218,12 @@ if($num!=0)	{
 					 if($res['pay_bit']==0)
 						 echo"<td class=\"center\"><span class=\"label label-danger\">No Payment Done</span>	</td> ";
 					else if($res['pay_bit']==1)
-						 echo"<td class=\"center\"><span class=\"label label-success\">Paid Rs. 150</span>	</td> ";
+						 echo"<td class=\"center\"><span class=\"label label-success\">Paid for Single Event</span>	</td> ";
 					else if($res['pay_bit']==2)
-						 echo"<td class=\"center\"><span class=\"label label-success\">Paid Rs. 200</span>	</td> ";
-					else if($res['pay_bit']==3)
-						 echo"<td class=\"center\"><span class=\"label label-success\">Paid Rs. 150 + Workshop</span>	</td> ";
-					else if($res['pay_bit']==4)
-						 echo"<td class=\"center\"><span class=\"label label-success\">Paid Rs. 200 + Workshop</span>	</td> ";
-					else if($res['pay_bit']==5)
-						 echo"<td class=\"center\"><span class=\"label label-warning\">Workshops Only</span>	</td> ";
-					 else 
-						 ;
+						 echo"<td class=\"center\"><span class=\"label label-success\">Paid for Multiple Events</span>	</td> ";
+					else 
+						 echo"<td class=\"center\"><span class=\"label label-success\">Paid for Special Event</span>	</td> ";
+				
 					$query2="SELECT * FROM event_reg LEFT outer JOIN events on event_reg.eve_id=events.id WHERE event_reg.drs_id=".$res['drishti_id']."";
 					$result2=mysql_query($query2) or die(mysql_error());	
 					$num2=mysql_num_fields($result2);

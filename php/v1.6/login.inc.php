@@ -73,4 +73,5 @@ require"connect.inc.php";
 							<p class="text-center">
 							<button type="submit" class="btn btn-primary" name="submit" value="submit">Login</button>
 							</p>
-</form>
+
+</form>						<a href="register.php" class="btn">Register</a>

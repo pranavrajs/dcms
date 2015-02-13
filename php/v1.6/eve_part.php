@@ -42,7 +42,7 @@
 <?php		
 			}
 		else {			
-			$query="SELECT * from event_reg left outer join students on students.drishti_id=event_reg.drs_id WHERE eve_id=".$_POST['eve']."";			
+			$query="SELECT * from event_reg left outer join students on students.drishti_id=event_reg.drs_id LEFT JOIN std_offline on students.drishti_id = std_offline.stud_id WHERE eve_id=".$_POST['eve']."";			
 			$result=mysql_query($query) or die(mysql_error());	
 			$num=mysql_num_rows($result);
 				?>
@@ -65,7 +65,8 @@
 	<table class="table table-striped table-bordered bootstrap-datatable datatable">
 			<thead>			
 			<tr>
-				<th>Drishti ID</th>
+				<th>Dhwani ID</th>
+				<th>Offline ID</th>
 				<th>Name</th>
 				<th>Phone</th>
 				<th>Secondary Phone</th>		
@@ -79,7 +80,15 @@
 				while($res=mysql_fetch_array($result))
 					{
 						echo "<tr>";
-						echo "<td class=\"center\"> DRS".$res['drishti_id']."</td>";
+						echo "<td class=\"center\"> DWN".$res['drishti_id']."</td>";
+
+
+						if($res['offline_id'])
+							echo "<td class=\"center\"> DWN".$res['offline_id']."</td>";
+						else
+							echo "<td class=\"center\"><a href='offline_generate.php?id=".$res['drishti_id']."&back=eve_part.php'>Generate</a></td>";
+				
+
 						echo "<td class=\"center\">".$res['name']."</a></td>";
 						echo "<td class=\"center\"> ".$res['phone']."</td>";
 						echo "<td class=\"center\"> ".$res['phone2']."</td>";
@@ -112,7 +121,7 @@
 			$var=$_GET['var'];
 			if($_SESSION['adm_lvl']==4)
 				$var=$_SESSION['event']; 
-			$query="SELECT * from event_reg left outer join students on students.drishti_id=event_reg.drs_id WHERE eve_id=".$var."";			
+			$query="SELECT * from event_reg left outer join students on students.drishti_id=event_reg.drs_id LEFT JOIN std_offline on students.drishti_id = std_offline.stud_id WHERE eve_id=".$var."";			
 			$result=mysql_query($query) or die(mysql_error());	
 			$num=mysql_num_rows($result);
 				?>
@@ -135,7 +144,8 @@
 	<table class="table table-striped table-bordered bootstrap-datatable datatable">
 			<thead>			
 			<tr>
-				<th>Drishti ID</th>
+				<th>Dhwani ID</th>
+				<th>Offline ID</th>
 				<th>Name</th>
 				<th>Phone</th>
 				<th>College</th>
@@ -150,7 +160,12 @@
 				while($res=mysql_fetch_array($result))
 					{
 						echo "<tr>";
-						echo "<td class=\"center\"> DRS".$res['drishti_id']."</td>";
+						echo "<td class=\"center\"> DWN".$res['drishti_id']."</td>";
+
+						if($res['offline_id'])
+							echo "<td class=\"center\"> DWN".$res['offline_id']."</td>";
+						else
+							echo "<td class=\"center\"><a href='offline_generate.php?id=".$res['drishti_id']."&back=eve_part.php'>Generate</a></td>";
 						echo "<td class=\"center\">".$res['name']."</td>";
 						echo "<td class=\"center\"> ".$res['phone']."</td>";
 						$q2="SELECT CollegeName FROM college WHERE CollegeId ='".$res['college']."'";

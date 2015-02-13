@@ -13,7 +13,7 @@
 			{			
 				while($row=mysql_fetch_array($result)) {
 					echo "";
-					echo "<tr><td>Drishti ID</td><td>" . $row['drishti_id'] . "</td></tr>";			
+					echo "<tr><td>Dhwani ID</td><td>" . $row['drishti_id'] . "</td></tr>";			
 					echo "<tr><td>Name</td><td>" . $row['name'] . "</td></tr>";			
 					echo "<tr><td>Email</td><td>" . $row['email'] . "</td></tr>";			
 					echo "<tr><td>Phone</td><td>" . $row['phone'] . "</td></tr>";								

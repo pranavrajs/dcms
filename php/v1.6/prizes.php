@@ -82,7 +82,7 @@
 		<table class="table table-striped table-bordered bootstrap-datatable datatable">
 					<tr>
 						<td>EVENT</td>
-						<td><input type="text" name="id" readonly  value="<?php echo $res1['id'];?>"></td>	
+						<td><input type="text" name="id" class="form-control" readonly  value="<?php echo $res1['id'];?>"></td>	
 					</tr>					
 					<tr>
 						<td>First Prize</td><td> </td>				
@@ -90,7 +90,7 @@
 					<tr>
 						<td>Name</td>
 						<td>
-								<select name="prize1">
+								<select name="prize1"  class="form-control">
 								<option value="0">--NULL--</option>
 								<?php
 											$query2="SELECT * FROM event_reg LEFT outer JOIN students on event_reg.drs_id=students.drishti_id WHERE event_reg.eve_id=".$_POST['eve']."";
@@ -111,7 +111,7 @@
 					<tr>
 						<td>Name</td>
 						<td>
-								<select name="prize2">
+								<select name="prize2"  class="form-control">
 								
 								<option value="0">--NULL--</option>
 								<?php
@@ -133,7 +133,7 @@
 					<tr>
 						<td>Name</td>
 						<td>
-								<select name="prize3">
+								<select name="prize3"  class="form-control">
 								<option value="0">--NULL--</option>								
 								<?php
 											$query2="SELECT * FROM event_reg LEFT outer JOIN students on event_reg.drs_id=students.drishti_id WHERE event_reg.eve_id=".$_POST['eve']."";
@@ -163,7 +163,7 @@
 		<table class="table table-striped table-bordered bootstrap-datatable datatable">
 					<tr>
 						<td>EVENT</td>
-						<td><input type="text" name="id" readonly  value="<?php echo $res1['id'];?>"></td>	
+						<td><input type="text" name="id" readonly  class="form-control"  value="<?php echo $res1['id'];?>"></td>	
 					</tr>					
 					<tr>
 						<td>First Prize</td><td> </td>				
@@ -171,7 +171,7 @@
 					<tr>
 						<td>Name</td>
 						<td>
-								<select name="prize1">
+								<select name="prize1"  class="form-control">
 								<option value="0">--NULL--</option>
 								<?php
 											$query2= "SELECT groups.group_id,groups.stud_id,students.name FROM `group_reg` LEFT JOIN groups on group_reg.group_id = groups.group_id LEFT JOIN students on groups.stud_id = students.drishti_id WHERE group_reg.event_id = ".$_POST['eve']." GROUP BY groups.group_id";
@@ -181,7 +181,7 @@
 											{
 												while($res=mysql_fetch_array($result)) 
 													echo"<option value=\"".$res['stud_id']."\">".$res['stud_id']." ".$res['name']."</option>";
-											}							
+											}					
 								?>								
 								</select>						
 						</td>
@@ -192,7 +192,7 @@
 					<tr>
 						<td>Name</td>
 						<td>
-								<select name="prize2">
+								<select name="prize2"  class="form-control">
 								
 								<option value="0">--NULL--</option>
 								<?php
@@ -214,7 +214,7 @@
 					<tr>
 						<td>Name</td>
 						<td>
-								<select name="prize3">
+								<select name="prize3"  class="form-control">
 								<option value="0">--NULL--</option>								
 								<?php
 											//$query2="SELECT * FROM `group` LEFT outer JOIN students on group.mem1 = students.drishti_id WHERE group.event=".$_POST['eve']."";
@@ -285,7 +285,7 @@ else {
 		<table class="table table-striped table-bordered bootstrap-datatable datatable">
 					<tr>
 						<td>EVENT</td>
-						<td><input type="text" name="id" readonly  value="<?php echo $res1['id'];?>"></td>	
+						<td><input type="text" class="form-control" name="id" readonly  value="<?php echo $res1['id'];?>"></td>	
 					</tr>					
 					<tr>
 						<td>First Prize</td><td> </td>				
@@ -293,7 +293,7 @@ else {
 					<tr>
 						<td>Name</td>
 						<td>
-								<select name="prize1">
+								<select name="prize1" class="form-control">
 								<option value="0">--NULL--</option>
 								<?php
 											$query2="SELECT * FROM event_reg LEFT outer JOIN students on event_reg.drs_id=students.drishti_id WHERE event_reg.eve_id=".$id."";
@@ -309,12 +309,18 @@ else {
 						</td>
 					</tr>
 					<tr>
+						<td>Points</td>
+						<td>
+							<input name="points1" class="form-control" type="number">
+						</td>
+					</tr>
+					<tr>
 						<td>Second Prize</td> <td></td>
 					</tr>
 					<tr>
 						<td>Name</td>
 						<td>
-								<select name="prize2">
+								<select name="prize2" class="form-control">
 								
 								<option value="0">--NULL--</option>
 								<?php
@@ -331,12 +337,18 @@ else {
 						</td>
 					</tr>
 					<tr>
+						<td>Points</td>
+						<td>
+							<input name="points1" class="form-control" type="number">
+						</td>
+					</tr>
+					<tr>
 						<td>Third Prize</td> <td></td>
 					</tr>
 					<tr>
 						<td>Name</td>
 						<td>
-								<select name="prize3">
+								<select name="prize3" class="form-control">
 								<option value="0">--NULL--</option>								
 								<?php
 											$query2="SELECT * FROM event_reg LEFT outer JOIN students on event_reg.drs_id=students.drishti_id WHERE event_reg.eve_id=".$id."";
@@ -349,6 +361,12 @@ else {
 											}							
 								?>								
 								</select>						
+						</td>
+					</tr>
+					<tr>
+						<td>Points</td>
+						<td>
+							<input name="points1" class="form-control" type="number">
 						</td>
 					</tr>
 		</table>	
@@ -374,16 +392,18 @@ else {
 					<tr>
 						<td>Name</td>
 						<td>
-								<select name="prize1">
+								<select name="prize1" class="form-control">
 								<option value="0">--NULL--</option>
 								<?php
-											$query2="SELECT * FROM `group` LEFT outer JOIN students on group.mem1 = students.drishti_id WHERE group.event=".$id."";
+										//	$query2="SELECT * FROM `group` LEFT outer JOIN students on group.mem1 = students.drishti_id WHERE group.event=".$id."";
+										
+											$query2 = "SELECT stud_id,name,groups.group_id FROM `groups` LEFT JOIN group_reg on groups.group_id = group_reg.group_id LEFT JOIN students on groups.stud_id = students.drishti_id  WHERE event_id = ".$id." GROUP BY event_id";
 											$result=mysql_query($query2) or die(mysql_error());
 											$num=mysql_num_rows($result) or die(mysql_error());
 											if($num)
 											{
 												while($res=mysql_fetch_array($result)) 
-													echo"<option value=\"".$res['mem1']."\">".$res['mem1']." ".$res['name']."</option>";
+													echo"<option value=\"".$res['stud_id']."\">".$res['stud_id']." ".$res['name']."</option>";
 											}							
 								?>								
 								</select>						
@@ -395,17 +415,17 @@ else {
 					<tr>
 						<td>Name</td>
 						<td>
-								<select name="prize2">
+								<select name="prize2" class="form-control">
 								
 								<option value="0">--NULL--</option>
 								<?php
-											$query2="SELECT * FROM `group` LEFT outer JOIN students on group.mem1 = students.drishti_id WHERE group.event=".$id."";
+											//$query2="SELECT * FROM `group` LEFT outer JOIN students on group.mem1 = students.drishti_id WHERE group.event=".$id."";
 											$result=mysql_query($query2) or die(mysql_error());
 											$num=mysql_num_rows($result) or die(mysql_error());
 											if($num)
 											{
 												while($res=mysql_fetch_array($result)) 
-													echo"<option value=\"".$res['mem1']."\">".$res['mem1']." ".$res['name']."</option>";
+													echo"<option value=\"".$res['stud_id']."\">".$res['stud_id']." ".$res['name']."</option>";
 											}							
 								?>								
 								</select>						
@@ -417,16 +437,16 @@ else {
 					<tr>
 						<td>Name</td>
 						<td>
-								<select name="prize3">
+								<select name="prize3" class="form-control">
 								<option value="0">--NULL--</option>								
 								<?php
-											$query2="SELECT * FROM `group` LEFT outer JOIN students on group.mem1 = students.drishti_id WHERE group.event=".$id."";
+											//$query2="SELECT * FROM `group` LEFT outer JOIN students on group.mem1 = students.drishti_id WHERE group.event=".$id."";
 											$result=mysql_query($query2) or die(mysql_error());
 											$num=mysql_num_rows($result) or die(mysql_error());
 											if($num)
 											{
 												while($res=mysql_fetch_array($result)) 
-													echo"<option value=\"".$res['mem1']."\">".$res['mem1']." ".$res['name']."</option>";
+													echo"<option value=\"".$res['stud_id']."\">".$res['stud_id']." ".$res['name']."</option>";
 											}							
 								?>								
 								</select>						

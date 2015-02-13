@@ -108,7 +108,29 @@ if($num!=0)	{
 					echo"<tr><td class=\"center\"> Problem Statement </td> <td class=\"center\"> ".$res['pbm_stat']."</td></tr>"; 					
 					
 					echo"<tr><td class=\"center\"> Prize </td> <td class=\"center\"> ".$res['prize1']."</td></tr>"; 					
-					echo"<tr><td class=\"center\"> Second Prize </td> <td class=\"center\"> ".$res['prize2']."</td></tr>"; 					
+					echo"<tr><td class=\"center\"> Second Prize </td> <td class=\"center\"> ".$res['prize2']."</td></tr>"; 
+					if($res['max_no'])
+						echo"<tr><td class=\"center\"> Max per team </td> <td class=\"center\"> ".$res['max_no']."</td></tr>"; 					
+					else	
+						echo"<tr><td class=\"center\"> Max per team </td> <td class=\"center\">Individual</td></tr>"; 	
+
+
+
+					echo"<tr><td class=\"center\"> Tags </td> <td class=\"center\">";
+
+					echo '<ul>';
+
+					$q = "SELECT * FROM event_tag LEFT JOIN tags on event_tag.tag_id = tags.id WHERE event_id=".$_GET['var'];
+
+					$r = mysql_query($q) or die(mysql_error());
+
+					while($res = mysql_fetch_array($r)){
+						echo '<li>'.$res['tag'].'</li>';
+					}
+					echo "</ul></td></tr>"; 
+
+			
+
  			}
  	}
 ?>

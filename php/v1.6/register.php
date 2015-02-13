@@ -54,29 +54,31 @@ $header .= "From:noreply@cetdrishti.com \r\n";
 $send_mail = mail ($to,$subject,$message,$header);
    if( $send_mail == true )  
    {
-      echo "Message sent successfully...";
+      echo "<center style='color:green'>Message sent successfully...</center>";
    }
    else
    {
-      echo "Message could not be sent...";
+      echo "<center style='color:red'>Message could not be sent...</center>";
    }
    
-						echo "Registered . Confirm your Mail :) ";	
+						echo "<center style='color:green'>Registered . Confirm your Mail :) </center>";	
 					}
 					else {
-						echo "Password dont match ";
+						echo "<center style='color:red'>Password dont match</center>";
 						}
 					}			
 			}	
 			else {
-				echo "All fields Required";
+				echo "<center style='color:red'>All fields Required</center>";
 				}
 			
 		}
 		
+
 	
 ?>
-<link href="http://www.twittstrap.com/twittstrap/assets/css/bootstrap.css" rel="stylesheet">
+<!--<link href="http://www.twittstrap.com/twittstrap/assets/css/bootstrap.css" rel="stylesheet">-->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <style type="text/css">
       body {
         padding-top: 40px;
@@ -110,11 +112,12 @@ $send_mail = mail ($to,$subject,$message,$header);
       }
 
     </style>
-    <link href="http://www.twittstrap.com/twittstrap//assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <!--<link href="http://www.twittstrap.com/twittstrap//assets/css/bootstrap-responsive.css" rel="stylesheet">-->
+
 <div class="container">
 <form action="register.php" method="POST" class="form-signin">
 			<h3>Signup as Event Manager</h3>
-			<p>Ensure that all data is correct. This data will be shown in Drishti Website* </p>
+			<p>Ensure that all data is correct. This data will be shown in Dhwani Website</p>
 <div class="input-prepend" title="Password" data-rel="tooltip">
 								<input class="input-block-level" name="fname"  type="text" placeholder="First name"  />
 							</div>
