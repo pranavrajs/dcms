@@ -7,7 +7,10 @@
 		$check=1; 
 	if(!loggedin() || $check)
 		header('Location:index.php');
-	include'header.php';
+	include'header.php';?>
+
+<script src="ckeditor/ckeditor.js"></script>
+	<?php
 	if(!isset($_GET['var'])) {
 			if(!isset($_POST['submit'])) {
 ?>
@@ -46,6 +49,8 @@
 					$result=mysql_query($query);
 					$res=mysql_fetch_array($result);					
 					?>
+
+<script src="ckeditor/ckeditor.js"></script>
 					<div class="row">
 	<div class="col-lg-12">
 		
@@ -71,7 +76,7 @@
 </tr>
 
 <?php
-if($res['group']==7 || $res['id']==26)
+if($res['group']==7)
 {
 ?>
 <tr>
@@ -95,6 +100,50 @@ if($res['group']==7 || $res['id']==26)
 	<td><b>Second Prize Money</b><p style="width:230px; text-align:justify;">(You can update this only once )</p></td>
 	<td>	<input type="text"  class="form-control" name='prize2' <?php echo $read; ?> value="<?php echo $res['prize2'];?>"></td>
 </tr>
+
+<tr>
+	<td><b>Max per Team</b><p style="width:230px; text-align:justify;">(Leave 0 for individual Events)</p></td>
+	<td>	<input type="text"  class="form-control" name='max_no' value="<?php echo $res['max_no'];?>"></td>
+</tr>
+
+
+
+<tr>
+	<td><b>Tags</b><p style="width:230px; text-align:justify;"></p></td>
+	<td>
+<?php 
+
+$q = "SELECT * FROM event_tag LEFT JOIN tags on event_tag.tag_id = tags.id WHERE event_id=".$_POST['eve'];
+
+$r = mysql_query($q) or die(mysql_error());
+$sel = Array();
+while($res = mysql_fetch_array($r)){
+	array_push($sel,$res['tag_id']);
+}
+
+?>
+
+
+	<select name="tags[]"  multiple="multiple"  class="form-control">
+
+<?php
+
+$q = "SELECT * FROM tags";
+$r = mysql_query($q);
+while($res = mysql_fetch_array($r)){
+	echo '<option value="'.$res['id'].'"';
+	if(in_array($res['id'],$sel))
+		echo 'selected="selected"';
+	echo '>'.$res['tag'].'</option>';
+}
+
+?>
+
+</td>
+		</tr>
+
+
+
 </table>	
 <div class="form-actions">
 	<input type="submit" class="btn btn-primary"name="submit" value="Submit">
@@ -126,7 +175,7 @@ if($res['group']==7 || $res['id']==26)
 <table class="table table-striped table-bordered bootstrap-datatable ">
 	<tr>
 	<td>Name of the event</td>
-	<td>	<input type="text" name='name' readonly value="<?php echo $res['name'];?>"></td>
+	<td>	<input type="text" class="form-control" name='name' readonly value="<?php echo $res['name'];?>"></td>
 </tr>
 
 <tr>
@@ -157,12 +206,60 @@ if($res['group']==7 || $res['id']==26)
 ?>
 <tr>
 	<td><b>First Prize Money</b><p style="width:230px; text-align:justify;">(You can update this only once) </p></td>
-	<td><input type="text" name='prize1' <?php echo $read; ?> value="<?php echo $res['prize1'];?>">	</td>
+	<td><input type="text" class="form-control" name='prize1' <?php echo $read; ?> value="<?php echo $res['prize1'];?>">	</td>
 </tr>
 <tr>
 	<td><b>Second Prize Money</b><p style="width:230px; text-align:justify;">(You can update this only once )</p></td>
-	<td>	<input type="text" name='prize2' <?php echo $read; ?> value="<?php echo $res['prize2'];?>"></td>
+	<td>	<input type="text" name='prize2' class="form-control" <?php echo $read; ?> value="<?php echo $res['prize2'];?>"></td>
 </tr>
+
+
+
+
+<tr>
+	<td><b>Max per Team</b><p style="width:230px; text-align:justify;">(Leave 0 for individual Events)</p></td>
+	<td>	<input type="text"  class="form-control" name='max_no' value="<?php echo $res['max_no'];?>"></td>
+</tr>
+
+
+
+<tr>
+	<td><b>Tags</b><p style="width:230px; text-align:justify;"></p></td>
+	<td>
+<?php 
+
+$q = "SELECT * FROM event_tag LEFT JOIN tags on event_tag.tag_id = tags.id WHERE event_id=".$_GET['var'];
+
+$r = mysql_query($q) or die(mysql_error());
+$sel = Array();
+while($res = mysql_fetch_array($r)){
+	array_push($sel,$res['tag_id']);
+}
+
+?>
+
+
+	<select name="tags[]"  multiple="multiple"  class="form-control">
+
+<?php
+
+$q = "SELECT * FROM tags";
+$r = mysql_query($q);
+while($res = mysql_fetch_array($r)){
+	echo '<option value="'.$res['id'].'"';
+	if(in_array($res['id'],$sel))
+		echo 'selected="selected"';
+	echo '>'.$res['tag'].'</option>';
+}
+
+?>
+
+</td>
+		</tr>
+
+
+
+
 </table>	
 <div class="form-actions">
 	<input type="submit" class="btn btn-primary"name="submit" value="Submit">

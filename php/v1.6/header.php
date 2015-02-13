@@ -29,7 +29,7 @@ THE SOFTWARE.
 <head>
 	
 	<meta name="author" content="Pranav" >
-	<title>Drishti Content Management System V1.6</title>
+	<title>DCMS V1.6</title>
 	<!-- The styles -->
 	<style type="text/css">
 	  body {
@@ -217,6 +217,9 @@ if($_SESSION['adm_lvl']==0) {
                     		<li>
                     			<a href="eve_edit.php?var=<?php echo $_SESSION['event']; ?>">Edit Event Details</a>
                     		</li>
+                    		<li>
+                    			<a href="add-tag.php">Add Tags</a>
+                    		</li>
                     	</ul>
                     </li>
 
@@ -232,11 +235,20 @@ if($_SESSION['adm_lvl']==0) {
                     	<a href="#">Event Details<span class="fa arrow"></span></a></a>
 
                     	<ul class="nav nav-second-level">
+              
+                    		<li>
+                    			<a href="add-events.php">Add Event</a>
+                    		</li>
+
+
                     		<li>
                     			<a href="eve_det.php">View Event Details</a>
                     		</li>
                     		<li>
                     			<a href="eve_edit.php">Edit Events</a>
+                    		</li>
+                    		<li>
+                    			<a href="add-tag.php">Add Tags</a>
                     		</li>
                     	</ul>
                     </li>
@@ -284,13 +296,7 @@ if($_SESSION['adm_lvl']==0) {
                     	<a href="#">Participation Details<span class="fa arrow"></span></a></a>
 
                     	<ul class="nav nav-second-level">
-                    		<li>
-                    			<a href="eve_det.php">View Event Details</a>
-                    		</li>
-                    		<li>
-                    			<a href="eve_edit.php">Edit Events</a>
-                    		</li>
-
+             
 <?php	
 	if($_SESSION['adm_lvl']==4) {
 ?>
@@ -329,7 +335,7 @@ if($_SESSION['adm_lvl']==0) {
 
                     	<ul class="nav nav-second-level">
                     		<li>
-                    			<a href="clg_std.php">View Event Details</a>
+                    			<a href="clg_std.php">Collegewise standings</a>
                     		</li>
 	<?php	
 	if($_SESSION['adm_lvl']==2|| $_SESSION['adm_lvl']==0) {

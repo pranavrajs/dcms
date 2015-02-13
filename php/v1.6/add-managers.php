@@ -41,7 +41,7 @@ while($res=mysql_fetch_array($result)) {
 
 <div class="input-group">
   <input type="text" class="form-control" placeholder="Email Id" name="email_drs">
-  <span class="input-group-addon" id="basic-addon2">@example.com</span>
+  <span class="input-group-addon" id="basic-addon2">@cetdhwani.com</span>
 </div>
 
 
@@ -80,7 +80,7 @@ while($res=mysql_fetch_array($result)) {
 else 
 {
 	if(isset($_POST['cl_name'])&&isset($_POST['event'])&&isset($_POST['email_drs'])) {
-			$email_drs=$_POST['email_drs']."@cetdrishti.com";
+			$email_drs=$_POST['email_drs']."@cetdhwani.com";
 			$query="UPDATE stud_reg SET event =".$_POST['event'].",email_drs='".$email_drs."' WHERE id=".$_POST['cl_name']."";
 			$result=mysql_query($query);
 			if($result) {
@@ -91,10 +91,9 @@ else
 						$row=mysql_fetch_array($r2);
 						$to=$row['email'];
 						$name=$row['fname']." ".$row['lname'];
-						$subject="Login Enabled at CETDRISHTI.COM";
+						$subject="Login Enabled at CETDHWANI.COM";
 $message=<<<EOD
 Hi $name,<br>
-This is Pranav Raj S (S5 CSE) - WebMaster CET Drishti.<br>
 Your login has been enabled .<br>
 Please login here and complete the details about your event :)
 <br><br>
@@ -102,27 +101,25 @@ Please login here and complete the details about your event :)
 <br> You can use this for official use .
 <br>All mail will be forwarded to $to .
 <br>You can send email with this alias on logging into   
-<a href="http://cetdrishti.com/dcms/">Drishti Event Manager Login</a>
+<a href="http://cetdhwani.com/dcms/">Dhwani Event Manager Login</a>
 <br>
 Your login id is your email and password is the one you have given at signup.<br>
 Feel free to contact me regarding any doubt in website.<br>
-Phone : +91-9446284490<br>
-Email : pranavrajs@gmail.com<br> 
+Phone : +91-9567125807<br>
+Email : kmjayadeep@gmail.com<br> 
 Thank You<br>
 <br>
-Pranav Raj S<br>
-Google Student Ambassador<br>
-College of Engineering Trivandrum
+Jayadeep K M<br>
 EOD;
 $header = "MIME-Version: 1.0 \r\n";
 $header .= "Content-type: text/html; charset=iso-8859-1 \r\n";
-$header .= "From:admin@cetdrishti.com \r\n";
+$header .= "From:admin@cetdhwani.com \r\n";
 $send_mail = mail ($to,$subject,$message,$header);
    if( $send_mail == true )  
    {
-   	$send = mail("pranavrajs@gmail.com",$subject,$message,$header);
+   	$send = mail("kmjayadeep@gmail.com",$subject,$message,$header);
 
-$send = mail("anoopsasidharan92@gmail.com",$subject,$message,$header);
+//$send = mail("anoopsasidharan92@gmail.com",$subject,$message,$header);
 
       echo "Message sent successfully...";
    }

@@ -155,7 +155,7 @@
  				$id = $_SESSION['event'];
  		else 
  				$id= $_GET['var'];
- 	$query = "SELECT * FROM `group` WHERE event = ".$id."";
+ 	$query = "SELECT * FROM `groups` LEFT JOIN group_reg on groups.group_id = group_reg.group_id WHERE event_id = ".$id." GROUP BY groups.group_id";
 				$result = mysql_query($query) or die(mysql_error());
 				if($result)
 				{
@@ -217,20 +217,32 @@
 									{
 											$i=1;
 											echo "<tr>";
-											echo "<td>".$res2['id']."</td>";
-												for($i=1;$i<= $res['max_no']; $i++) 
-												{														
+											echo "<td>".$res2['group_id']."</td>";
+												//for($i=1;$i<= $res['max_no']; $i++) 
+													
 										?>
-												<td><?php 
-													$q3 = "SELECT name FROM students WHERE drishti_id = ".$res2['mem'.$i]."";	
-													$r3 = mysql_query($q3);
-													if($r3)
-													{
-														$res3 = mysql_fetch_array($r3);											
-												echo $res2['mem'.$i]."  ".$res3['name'] ?></td>
+
 										<?php
-													}
-												}
+
+										$q3 = "SELECT name, stud_id FROM groups INNER JOIN students on groups.stud_id = students.drishti_id WHERE group_id = ".$res2['group_id'];	
+										$r3 = mysql_query($q3);
+										if($r3){
+											while($res = mysql_fetch_array($r3)){
+												echo '<td>'.$res['stud_id'].' '.$res['name'].'</td>';
+											}
+
+
+
+
+										}
+
+
+
+										?>	
+
+
+
+										<?php
 											echo "</tr>";
 										}
 							?>

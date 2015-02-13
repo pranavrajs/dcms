@@ -94,45 +94,55 @@ p.helptext2{
     padding:0;
 }
 </style>
-<script type="text/javascript" src="js/llqrcode.js"></script>
-<script type="text/javascript" src="js/webqr2.js"></script>
+<script type="text/javascript" src="js/html5-qrcode.js"></script>
 
 
 </head>
+<body>
 
 <div class="box-content well">
-<body onload="load()">
-<div id="main">
-<div id="mainbody">
-<div id="jukebox"></div>
-<table class="tsel" border="0">
-<tr><td align="right" valign="top"  >
-</td>
-<td valign="top"  >
-<table class="tsel" border="0">
-<tr>
-<td><img class="selector" id="webcamimg" src="webcam2.png" onclick="setwebcam();" align="left" /></td>
-<td><img class="selector" id="qrimg" style="visibility:hidden;" src="qrimg2.png" onclick="setimg()" align="right"/></td></tr>
-<tr><td colspan="2" align="center">
-<div id="outdiv">
-</div></td></tr>
-</table>
-</td>
-</tr>
-<tr><td colspan="3" align="center">
-<img src="down.png"/>
-</td></tr>
-<tr><td colspan="3" align="center">
-<div id="result"></div>
-</td></tr>
-</table>
-</div>&nbsp;
-<div id="footer">
-<br>
+
+
+<div class="row">
+
+
+<div class="col-md-6">
+
+ <div id="reader" style="height:300px;width:100%;">
+ </div>
+
+
 </div>
+
+<div class="col-md-6">
+
+<h3>&nbsp; </h3>
+<div class="result"></div>
+
+
 </div>
-<canvas id="qr-canvas" width="800" height="600"></canvas>
+
+
+
+</div>
+
+<script type="text/javascript">
+
+     $('#reader').html5_qrcode(function(data){
+            $('.result').html(data);
+            window.location = 'stud_det.php?offline_id='+data;
+    },
+    function(error){
+        //show read errors 
+    }, function(videoError){
+
+    }
+    );
+
+
+</script>
+
 </div>
 <?php 
-	require 'footer.php';
+    require 'footer.php';
 ?>

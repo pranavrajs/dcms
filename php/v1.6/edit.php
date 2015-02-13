@@ -67,7 +67,7 @@ $('#pay').click(function (){
 		<form action="editprocess.php" method="POST"class="form-horizontal">
 				<table class="table table-striped table-bordered bootstrap-datatable ">
 					<tr>
-						<td> Dristhi ID </td>
+						<td> Dhwani ID </td>
 							<td>	<?php echo "	<input readonly  name=\"drishti_id\"  class=\"form-control\"  type=\"text\" value = \"$id\"placeholder=\"Drishti ID\"  /></td>	"?>
 					</tr>
 					<tr>

@@ -19,7 +19,7 @@
 			<td>Select an event </td>
 			<td>		<select name="eve"  class="form-control">
 <?php						
-		$query="SELECT id,name FROM events ORDER BY id ASC";
+		$query="SELECT id,name FROM events WHERE max_no>0 ORDER BY id ASC";
 					$result=mysql_query($query);
 					$num=mysql_num_rows($result);
 					if($num)
@@ -49,8 +49,14 @@ else {
 		$r1=mysql_query($q1);
 		$res=mysql_fetch_array($r1);		
 		$num = $res['max_no'];
+
+		if(!$num){?>
+
+<div class="label label-warning">This is an individual event</div>
+
+		<?php }
 		while($num > 0) {
-	?>
+		?>
 		<tr>
 			<td>Member </td>
 			<td>
@@ -105,12 +111,20 @@ else {
 		$r1=mysql_query($q1);
 		$res=mysql_fetch_array($r1);		
 		$num = $res['max_no'];
+
+		if(!$num){
+	?>
+
+<div class="label label-warning">This is an individual event</div>
+
+	<?php
+		}
 		while($num > 0) {
 	?>
 		<tr>
 			<td>Member </td>
 			<td>
-			<select name="event[]">
+			<select name="event[]" class="form-control">
 			<option value="0">NULL</option>
 			<?php			
 				$query2="SELECT * FROM event_reg LEFT OUTER JOIN students on event_reg.drs_id = students.drishti_id WHERE event_reg.eve_id = ".$id."";

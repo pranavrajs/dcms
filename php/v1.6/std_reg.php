@@ -55,51 +55,6 @@
 		}
 
 ?>
-<style type="text/css">
-.hideblock
-{
-	display :none;
-	visibility : hidden;
-}
-</style>
-<script type="text/javascript" >
-window.onload = function(){
-	
-$('#pay').change(function (){
-
-	var selected = parseInt(jQuery(this).val());
-
-	switch(selected) {
-		case 0:
-		$("#events").hide("slow");		
-		$("#workshops").hide("slow");
-		break;
-		case 1:
-		$("#events").show(1000);		
-		$("#workshops").hide("slow");
-		break;
-		case 2:		
-		$("#events").show(1000);		
-		$("#workshops").hide("slow");
-		break;
-		case 3:		
-		$("#events").show(1000);		
-		$("#workshops").show(1000);
-		break;
-		case 4:
-		$("#events").show(1000);		
-		$("#workshops").show(1000);
-		break;	
-		case 5:
-		$("#workshops").show(1000);
-		$('#events').hide("slow");
-		break;	
-		default:		
-		break;
-	}
-});
-}
-</script>
 <div class="box span12">
 	<div class="box-content">
 		
@@ -153,13 +108,10 @@ $('#pay').change(function (){
 	<tr>
 		<td> Payment </td>
 		<td>
-<select name="payment" id="pay" multiple="multiple"  class="form-control">
+<select name="payment" id="pay"  class="form-control">
 	<option value="0"> No payment</option>
-	<option value="1">Rs.150</option>
-	<option value="2"> Rs.200</option>
-	<option value="3"> Rs.150 + Workshop</option>
-	<option value="4"> Rs.200 + Workshop</option>
-	<option value="5"> Workshop Only</option>
+	<option value="1">Single Event</option>
+	<option value="2">All Events</option>
 </select>
 		</td>	
 	</tr>			
@@ -171,51 +123,32 @@ $('#pay').change(function (){
 			<tr><td><b>EVENTS</b></td></td><td></td></tr>
 			<?php 
 				
-					$query="SELECT * FROM events ORDER BY events.group ASC";
+					$query="SELECT * FROM events ORDER BY eve_sname ASC";
 					$result=mysql_query($query) or die(mysql_error());
 					$num=mysql_num_rows($result);
 					if($num)
 					{
 							$gp=0;
 							while($res=mysql_fetch_array($result)) {	
-								if($res['group']!=0 && $res['group']!=21  && $res['group']!=10 && $res['group']!=20)
+								/*if($res['group']!=0 && $res['group']!=21  && $res['group']!=10 && $res['group']!=20)
 								{
 									if($gp!=$res['group'])
 									{
 										$gp=$res['group'];
 										echo "<tr><td></td><td></td></tr><tr><td></td><td></td></tr>";		
 									}
+*/
 									echo"<tr>";
 									echo "<td>".$res['name']."</td>";
 									echo "<td><input type=\"checkbox\"  name=\"eve_arr[]\" value='".$res['id']."'  /></td>";
 									echo '</tr>';	
-								}		
+								//}		
 							}				
 					}			
 			?>		
 				</table>
 			</div>
 	
-				<div id="workshops">
-			<table>		
-			<tr><td></td><td></td></tr><tr><td><b>WORKSHOPS</b></td><td></td></tr><tr><td></td><td></td></tr>
-			<?php 
-				
-					$query2="SELECT * FROM events WHERE events.group = 20 ORDER BY events.group ASC ";
-					$result2=mysql_query($query2) or die(mysql_error());
-					$num2=mysql_num_rows($result2);
-					if($num2)
-					{
-							while($res=mysql_fetch_array($result2)) {	
-									echo"<tr>";
-									echo "<td>".$res['name']."<td> Rs. ".$res['prize1']."</td></td>";
-									echo "<td><input type=\"checkbox\"  name=\"eve_arr[]\" value='".$res['id']."'  /></td>";
-									echo '</tr>';	
-							}				
-					}			
-			?>
-			</table>
-			</div>
 		</td>	
 	</tr>
 
